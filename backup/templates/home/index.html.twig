@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome chief
+{% endblock %}
+{% block body %}
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta
+		name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ asset('/css/home.css') }}">
+		<title>Caba's pirate town</title>
+	</head>
+	<div class="head">
+        <img src="{{ asset('/img/cabemoji.png') }}" alt="logo"/>
+	</div>
+	<div class="login-box">
+		<h2 class="heading">Caba's Spoofer</h2>
+
+		<form id="spoofer-form" method="POST" action="/send/sms">
+			<div class="user-box">
+				<input name="To" type="text" required="">
+				<label>Phone Number</label>
+			</div>
+
+			<div class="user-box">
+				<input name="From" type="text" value="+18155970282" required="">
+				<label>Sent From</label>
+			</div>
+
+			<div class="user-box" id="message-box">
+				<input name="Message" type="text">
+				<label>Message</label>
+			</div>
+		
+			<div class="user-box" id="voice-box" style="display: none;">
+				<input name="Voice" list="Voice">
+				<label>Vocal:</label>
+				<datalist name="Voice" id="Voice">
+					<option value="L9"></option>
+					<option value="Rick"></option>
+					<option value="Squeezie"></option>
+					<option value="Booba"></option>
+					<option value="Amine"></option>
+				</datalist>
+			</div>
+			<button type="submit" class="btn">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				Send
+			</button>
+			<button type="button" class="btn" id="callMode">Call Mode</button>
+		</form>
+	</div>
+	<script src="../assets/js/script.js"></script>
+{% endblock %}

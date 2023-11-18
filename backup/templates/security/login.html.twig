@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block body %}
+	<link rel="stylesheet" href="{{ asset('/css/login.css') }}">
+
+	<form
+		class="form" method="post">
+
+
+		{# {% if app.user %}
+									<div class="mb-3">
+										You are logged in as
+										{{ app.user.userIdentifier }},
+										<a href="{{ path('app_logout') }}">Logout</a>
+									</div>
+								{% endif %} #}
+
+		<p id="heading">Login</p>
+		<div class="field">
+			<svg
+				class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16"><!-- Your SVG path here -->
+			</svg>
+			<input autocomplete="off" placeholder="Username" class="input-field" type="text" name="email" required autofocus>
+		</div>
+		<div class="field">
+			<svg
+				class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16"><!-- Your SVG path here -->
+			</svg>
+			<input placeholder="Password" class="input-field" type="password" name="password" required>
+		</div>
+		<div class="btn">
+			<button class="button1" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+			<button class="button2">Sign Up</button>
+		</div>
+		<button class="button3">Forgot Password</button>
+		{% if error %}
+			<div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
+
+		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+	</form>
+{% endblock %}

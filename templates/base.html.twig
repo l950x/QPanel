@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+		<link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+		<link rel="icon" href=""{{asset('/img/cabemoji.png')}}> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		{{ encore_entry_link_tags('app') }}
+		{{ encore_entry_script_tags('app') }}
+	</head>
+	<body>
+		<div>
+		<div class="wave"></div>
+		<div class="wave"></div>
+		<div class="wave"></div>
+	</div>
+		<div class="ctn"> {% block body %}{% endblock %}
+			{# <div class="btndiscord">
+							<a href="discord.com">
+								<iconify-icon class="icn iconColor" icon="ri:discord-line" width="25" height="25"></iconify-icon>
+							</a>
+						</div> #}
+			</div>
+			<script src="{{ asset('/js/color.js') }}"></script>
+			<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+			<script src="//code.jquery.com/jquery.js"></script>
+    		<script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+   			{{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+		</body>
+	</html>

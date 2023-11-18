@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome chief
+{% endblock %}
+{% block body %}
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ asset('/css/sendSms.css') }}">
+</head>
+{% include "_left.html.twig" %}
+<div class="center">
+	<div class="Form">
+    <form id="" method="POST" action="{{ asset('./Controller/SendSmsController.php') }}">
+		<div class="from">
+			<input type="text" placeholder="From" value="+18155970282"></input>
+		</div>
+		<div class="to">
+			<input type="text" placeholder="Send To"></input>
+		</div>
+		<div class="message">
+			<input type="text" placeholder="Message"></input>
+		</div>
+		<div class="captcha">
+		</div>
+		<div class="submit">
+			<input type="submit" value="Send"</input>
+			{# {{sms}} #}
+		</div>
+	</form>
+	</div>
+	<form id="upload-form" method="POST" action="{{ path('app_upload_mp3') }}" enctype="multipart/form-data">
+    <div class="file-input">
+        <input type="file" name="mp3_file" accept=".mp3">
+    </div>
+    <div class="submit">
+        <input type="submit" value="Upload">
+    </div>
+</form>
+
+</div>
+{% endblock %}

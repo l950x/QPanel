@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="{{ asset('/css/left.css') }}">
+
+<div class="left">
+	<div class="leftIn">
+		<a href="app_home"><img src="{{asset('/img/cabemoji.png')}}" alt="logo"/></a>
+		<p class="iconColor">QPanel v1.0.0</p>
+	</div>
+	<div class="LA">
+		<div class="dashboard">
+			<iconify-icon class="iconColor" icon="material-symbols:dashboard-outline"></iconify-icon>
+			<a class="iconColor" href="/">
+				Dashboard</a>
+		</div>
+		<div class="profile">
+			<iconify-icon class="iconColor" icon="iconamoon:profile"></iconify-icon>
+			<a class="iconColor" href="/profile">Profile</a>
+		</div>
+		<div class="placeholder">
+			<iconify-icon class="iconColor" class="iconColor" icon="ph:placeholder"></iconify-icon>
+			<a class="iconColor" href="">Placeholder</a>
+		</div>
+	</div>
+	<hr/>
+	<div class="LA">
+		<div class="smsLeft">
+			<iconify-icon class="iconColor" icon="material-symbols:sms-outline"></iconify-icon>
+			<a class="iconColor" href="/sms">SMS Services</a>
+		</div>
+		<div class="calls">
+			<iconify-icon class="iconColor" icon="material-symbols:call-outline"></iconify-icon>
+			<a class="iconColor" href="/call">Voice Services</a>
+		</div>
+		<div class="mailLeft">
+			<iconify-icon class="iconColor" icon="material-symbols:mail-outline"></iconify-icon>
+			<a class="iconColor" href="/mail">Mails Services</a>
+		</div>
+		<div class="MediaLeft">
+			<iconify-icon class="iconColor" icon="material-symbols:media-link-outline"></iconify-icon>
+			<a class="iconColor" href="/media">Media Services</a>
+		</div>
+	</div>
+	<hr/>
+	<div class="LA">
+		<div class="placeholder">
+			<iconify-icon class="iconColor" icon="material-symbols:logout"></iconify-icon>
+			<a class="iconColor" href="/logout">Logout</a>
+		</div>
+		<div class="settings">
+			<iconify-icon class="iconColor" icon="material-symbols:settings-outline"></iconify-icon>
+			<a class="iconColor" id="settingsLink" href="">Settings</a>
+		</div>
+		<div id="popup" class="popup">
+			<div class="popup-content">
+				<h2>Settings</h2>
+				<p>Theme:</p>
+				<button id="purpleButton">Default</button>
+				<button id="redButton">Red</button>
+				<button id="greenButton">Green</button>
+				<button id="blueButton">Blue</button>
+				<button id="pinkButton">Pink</button>
+				<button id="rainbowButton">RGB</button>
+				<button id="closeButton">Close</button>
+			</div>
+		</div>
+		<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+	</div>
+</div>

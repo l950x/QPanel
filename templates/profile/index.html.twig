@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome chief
+{% endblock %}
+
+{% block body %}
+	<link rel="stylesheet" href="{{ asset('/css/profile.css') }}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+
+	{% include "_left.html.twig" %}
+	<div class="center">
+		<div class="profile-element">
+			<div class="p1">
+				<div class="logo"></div>
+			</div>
+			<div class="user">
+				<p class="iconColor">{{ user.username }}</p>
+			</div>
+			<div class="description">
+				{% if user.description %}
+					<p class="iconColor">{{ user.description }}</p>
+				{% else %}
+					<p class="iconColor">Description</p>
+				{% endif %}
+			</div>
+			<div class="ctn2">
+				<div>
+					<p class="iconColor">Role: User</p>
+					<p class="iconColor">Last seen: Online</p>
+					<p class="iconColor">Invited by: Admin</p>
+				</div>
+				<div>
+					<p class="iconColor">Placeholder</p>
+					<p class="iconColor">Placeholder</p>
+					<p class="iconColor">Placeholder</p>
+				</div>
+				<div>
+					<p class="iconColor">ID:
+						{{ user.id }}</p>
+					<p class="iconColor">Theme: Default</p>
+					<p class="iconColor">Joined on:</p>
+				</div>
+			</div>
+			<div class="edit">
+				<button class="iconColor" id="editProfileBtn">Edit the profile</button>
+			</div>
+		</div>
+		<div class="editProfileForm" id="editProfileForm" style="display: none;">
+			<form method="post" action="{{ path('app_profile') }}">
+				{{ form_widget(form._token) }}
+				{# {{ form_widget(form.username) }} #}
+				{{ form_widget(form.description) }}
+				{{ form_widget(form.email) }}
+				{{ form_widget(form.password) }}
+				<div class="btn">
+					<button class="iconColor" id="cancelEditBtn">Cancel</button>
+					<button class="iconColor" id="saveProfileBtn">Save</button>
+				</div>
+				{% if form.vars.errors|length > 0 %}
+					<div class="form-errors">
+						{{ form_errors(form) }}
+					</div>
+				{% endif %}
+			</form>
+		</div>
+	</div>
+	<script>
+		document.getElementById('editProfileBtn').addEventListener('click', function () {
+var form = document.getElementById('editProfileForm');
+form.style.display = 'block';
+});
+document.getElementById('cancelEditBtn').addEventListener('click', function () {
+var form = document.getElementById('editProfileForm');
+form.style.display = 'none';
+});
+	</script>
+{% endblock %}
