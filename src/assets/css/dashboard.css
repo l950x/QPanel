@@ -1,0 +1,107 @@
+:root {
+    --divColor: #1f1f1f67;
+  }
+  
+  .ctn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .center {
+    padding: 20px;
+    font-family: "Black Ops One", cursive;
+    animation: Gazo3 0.5s ease 0s normal forwards;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    width: 70%;
+    /* height: 550px; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logo {
+    background-image: url("../img/cabemoji2.png");
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+    /* background-color: #e70; */
+  }
+  .center img {
+    height: 150px;
+  }
+  
+  .center .p1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .center .p2 {
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: var(--divColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .center .p3 {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: var(--divColor);
+    text-align: center;
+  }
+  
+  .center .p4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .center .p4 p {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: var(--divColor);
+    text-align: center;
+  }
+  
+  .center .p5 {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: var(--divColor);
+    text-align: center;
+  }
+  
+  .id,
+  .mail,
+  .discord,
+  .smsc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .icn {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+  }
+  .version {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .shield {
+    padding: 5px;
+  }
+  
