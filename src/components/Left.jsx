@@ -3,8 +3,10 @@ import { Icon } from "@iconify/react";
 import Logo from "../assets/img/cabemoji.png";
 import ColorControl from "./ColorControl";
 const Left = () => {
+  
 	function logout() {
 	localStorage.removeItem('token');
+  window.location.href = "/QPanel/login";
   }
   return (
     <div className="left">
@@ -35,37 +37,27 @@ const Left = () => {
             Profile
           </a>
         </div>
-        <div className="placeholder">
+        <div className="placeholder disabledBtn">
           <Icon
             className="iconColor"
             style={{ verticalAlign: "middle" }}
             icon="ph:placeholder"
           ></Icon>
-          <a className="iconColor" href="">
+          <button className="iconColor" href="">
             Placeholder
-          </a>
+          </button>
         </div>
       </div>
       <hr className="leftHr" />
       <div className="LA">
-        <div className="smsLeft">
+      <div className="MediaLeft">
           <Icon
             className="iconColor"
             style={{ verticalAlign: "middle" }}
-            icon="material-symbols:sms-outline"
+            icon="material-symbols:media-link-outline"
           ></Icon>
-          <a className="iconColor" href="/QPanel/sms">
-            SMS Services
-          </a>
-        </div>
-        <div className="calls">
-          <Icon
-            className="iconColor"
-            style={{ verticalAlign: "middle" }}
-            icon="material-symbols:call-outline"
-          ></Icon>
-          <a className="iconColor" href="/QPanel/call">
-            Voice Services
+          <a className="iconColor" href="/QPanel/media">
+            Media Services
           </a>
         </div>
         <div className="mailLeft">
@@ -78,15 +70,25 @@ const Left = () => {
             Mails Services
           </a>
         </div>
-        <div className="MediaLeft">
+        <div className="smsLeft disabledBtn">
           <Icon
             className="iconColor"
             style={{ verticalAlign: "middle" }}
-            icon="material-symbols:media-link-outline"
+            icon="material-symbols:sms-outline"
           ></Icon>
-          <a className="iconColor" href="/QPanel/media">
-            Media Services
-          </a>
+          <button className="iconColor" href="/QPanel/sms">
+            SMS Services
+          </button>
+        </div>
+        <div className="calls disabledBtn">
+          <Icon
+            className="iconColor"
+            style={{ verticalAlign: "middle" }}
+            icon="material-symbols:call-outline"
+          ></Icon>
+          <button className="iconColor" href="/QPanel/call">
+            Voice Services
+          </button>
         </div>
       </div>
       <hr className="leftHr" />
@@ -97,7 +99,7 @@ const Left = () => {
             style={{ verticalAlign: "middle" }}
             icon="material-symbols:logout"
           ></Icon>
-          <a className="iconColor" onClick={logout} href="/logout">
+          <a className="iconColor" onClick={logout}>
             Logout
           </a>
         </div>

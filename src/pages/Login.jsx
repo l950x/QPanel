@@ -19,7 +19,7 @@ const Login = () => {
       .post("https://127.0.0.1:8000/api/login", formData)
       .then((response) => {
         localStorage.setItem("token", response.data.token);
-        navigate("/");
+        navigate("/QPanel/");
       })
       .catch((error) => {
         if (error.response) {

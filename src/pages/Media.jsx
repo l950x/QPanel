@@ -7,7 +7,8 @@ const Media = () => {
   return (
     <>
     <Left/>
-    <div className="Form">
+    <div className="center">
+    <h1>Media Services</h1>
     <MediaForm/>
     </div>
     </>

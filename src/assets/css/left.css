@@ -50,7 +50,30 @@ a:hover {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+.LA button {
+  font-family: "Caprasimo", cursive;
+  font-family: "Roboto Condensed", sans-serif;
+  transition: 0.2s;
+  text-decoration: none;
+  margin-left: 5px;
+  font-size: 18px;
+  background: none;
+  border: none;
+  color: rgb(154, 154, 154);
+}
 
+.disabledBtn svg {
+  color: rgb(154, 154, 154);
+}
+.disabledBtn:hover {
+  color: rgb(74, 74, 74);
+  opacity: 0.5;
+  transition: 0.2s;
+}
+.disabledBtn {
+  transition: 0.2s;
+  cursor: none;
+}
 .LA a {
   font-family: "Caprasimo", cursive;
   font-family: "Roboto Condensed", sans-serif;

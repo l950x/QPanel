@@ -31,6 +31,7 @@ const ColorControl = () => {
         <Icon
           className="iconColor"
           icon="material-symbols:settings-outline"
+          style={{ verticalAlign: "middle" }}
         ></Icon>
         <a className="iconColor" onClick={showPopup}>
           Settings

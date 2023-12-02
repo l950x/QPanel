@@ -35,8 +35,7 @@ const MediaForm = () => {
 
   return (
     <div>
-      <ToastContainer/>
-        <form onSubmit={handleSubmit}>
+      <form className="Form" onSubmit={handleSubmit}>
         <select
           name="media"
           value={media}
@@ -48,7 +47,6 @@ const MediaForm = () => {
           <option value="Tiktok">Tiktok</option>
           <option value="Youtube">Youtube</option>
         </select>
-
         <select
           name="services"
           value={service}
@@ -56,13 +54,12 @@ const MediaForm = () => {
           placeholder="Which services ?"
         >
           <option value="">Which services ?</option>
-          {media === 'Youtube' ? (
+          {media === "Youtube" ? (
             <option value="Dislike">Dislike</option>
           ) : null}
           <option value="Likes">Likes</option>
           <option value="Followers">Followers</option>
         </select>
-
         <input
           type="text"
           name="link"
@@ -70,7 +67,6 @@ const MediaForm = () => {
           onChange={(e) => setLink(e.target.value)}
           placeholder="Link (https://...)"
         />
-
         <input
           type="text"
           name="number"
@@ -78,11 +74,12 @@ const MediaForm = () => {
           onChange={(e) => setQuantity(e.target.value)}
           placeholder="Quantity"
         />
-
-        <button type="submit">Send</button>
+        <button className="ui-btn">
+          <span>Send</span>
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default MediaForm
+export default MediaForm;

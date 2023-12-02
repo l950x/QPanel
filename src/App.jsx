@@ -65,8 +65,8 @@ function App() {
             'input[type="image"]',
             "label[for]",
             "select",
-            "textarea",
             "button",
+            "textarea",
             ".link",
           ]}
         />
