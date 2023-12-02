@@ -21,7 +21,7 @@ const Left = () => {
             style={{ verticalAlign: "middle" }}
             icon="material-symbols:dashboard-outline"
           ></Icon>
-          <a className="iconColor" href="/">
+          <a className="iconColor" href="/QPanel/">
             Dashboard
           </a>
         </div>
