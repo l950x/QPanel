@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const MailForm = () => {
   const [mail, setMail] = useState("");
@@ -15,17 +15,15 @@ const MailForm = () => {
       .catch((error) => {
         if (error.response) {
           const statusCode = error.response.status;
-          if (statusCode === 401) {
-            toast.error("Incorrect identifiant");
-          } else if (statusCode === 404) {
+          if (statusCode === 404) {
             toast.error("404, API not found");
           } else {
-            toast.error(`Error ${statusCode}, contact admin`);
+            toast.error(`Error ${statusCode}, please contact admin`);
           }
         } else if (error.request) {
-          toast.error("Server error: ");
+          toast.error("Internal server error");
         } else {
-          toast.error("Request error");
+          toast.error("Request error please retry");
         }
       });
   };

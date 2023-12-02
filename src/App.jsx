@@ -17,21 +17,19 @@ function App() {
     let bg = localStorage.getItem("disable-bg");
     if (bg) {
       setDisableBg(1);
-      console.log(disableBg);
     } else {
       setDisableBg(0);
-      console.log(disableBg);
     }
   }, [disableBg]);
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (!token) {
-  //     if (location.pathname !== "/QPanel/login") {
-  //       window.location.href = "/QPanel/login";
-  //       toast.error("Vous devez être connecté!");
-  //     }
-  //   }
-  // }, []);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      if (location.pathname !== "/QPanel/login") {
+        window.location.href = "/QPanel/login";
+        toast.error("Vous devez être connecté!");
+      }
+    }
+  }, []);
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -1,8 +1,13 @@
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const MediaForm = () => {
+  const token = localStorage.getItem("token");
+  const userId = jwtDecode(token).username;
+
   const [media, setMedia] = useState("");
   const [service, setService] = useState("");
   const [link, setLink] = useState("");
@@ -10,25 +15,49 @@ const MediaForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!media || !service || !link || !quantity) {
+      toast.error("Please fill in all the fields");
+      return;
+    }
+
+    const url = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    if (!url.test(link)) {
+      toast.error("Please provide a valid URL link");
+      return;
+    }
+
+    const quantityValue = parseInt(quantity, 10);
+    if (isNaN(quantityValue) || quantityValue <= 0) {
+      toast.error("Please provide a valid quantity value");
+      return;
+    }
+
+    const data = {
+      media: media,
+      services: service,
+      link: link,
+      number: quantity,
+      userId: userId,
+    };
+
     axios
-      .post("https://127.0.0.1:8000/api/login")
+      .post("https://127.0.0.1:8000/api/media", data)
       .then((response) => {
-        localStorage.setItem("token", response.data.token);
+        toast.success(response.data.message);
       })
       .catch((error) => {
         if (error.response) {
           const statusCode = error.response.status;
-          if (statusCode === 401) {
-            toast.error("Incorrect identifiant");
-          } else if (statusCode === 404) {
+          if (statusCode === 404) {
             toast.error("404, API not found");
           } else {
-            toast.error(`Error ${statusCode}, contact admin`);
+            toast.error(`Error ${statusCode}, please contact admin`);
           }
         } else if (error.request) {
-          toast.error("Server error: ");
+          toast.error("Internal server error");
         } else {
-          toast.error("Request error");
+          toast.error("Request error please retry");
         }
       });
   };

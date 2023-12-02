@@ -55,7 +55,7 @@
   border-color: transparent;
 }
 .Form select option {
-  background-color: rgb(182, 182, 182);
+  background-color: var(--divColor);
   border-color: transparent;
 }
 .ui-btn {

@@ -10,7 +10,6 @@ const Dashboard = () => {
     const token = localStorage.getItem("token");
     if (token) {
       const decodedToken = jwtDecode(token);
-      console.log(decodedToken);
       const userId = decodedToken.username;
       axios
         .post(`https://127.0.0.1:8000/api/dashboard/${userId}`)
