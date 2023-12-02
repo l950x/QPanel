@@ -59,10 +59,10 @@ function App() {
         />
         <Router>
           <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/media" element={<Media />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/QPanel/" element={<Dashboard />} />
+            <Route path="/QPanel/media" element={<Media />} />
+            <Route path="/QPanel/profile" element={<Profile />} />
+            <Route path="/QPanel/login" element={<Login />} />
           </Routes>
         </Router>
         <ToastContainer />
