@@ -1,6 +1,6 @@
 import "../assets/css/dashboard.css";
 import { Icon } from "@iconify/react";
-import Left from "../components/left";
+import Left from "../components/Left";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
