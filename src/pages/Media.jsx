@@ -1,6 +1,6 @@
-// import '../assets/css/media.css'
-import MediaForm from "../components/MediaForm";
+import '../assets/css/media.css'
 import Left from "../components/Left";
+import MediaForm from "../components/MediaForm";
 
 const Media = () => {
 

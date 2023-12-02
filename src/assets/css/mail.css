@@ -32,8 +32,7 @@
     padding: 0;
     text-align: center;
   }
-  .Form input,
-  .Form select {
+  .Form input {
     border-radius: 5px;
     font-family: "Black Ops One", cursive;
     background-color: var(--divColor);
@@ -51,13 +50,7 @@
   .Form input::placeholder {
     color: var(--main-color);
   }
-  .form select {
-    border-color: transparent;
-  }
-  .Form select option {
-    background-color: rgb(182, 182, 182);
-    border-color: transparent;
-  }
+
   .ui-btn {
     --btn-default-bg: var(--divColor);
     --btn-padding: 14px 60px;
