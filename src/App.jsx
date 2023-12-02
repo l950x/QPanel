@@ -1,26 +1,25 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/dashboard";
-import Left from "./components/left";
 import Media from "./pages/Media";
 import Particle from "./components/Particle";
 import AnimatedCursor from "react-animated-cursor";
 import Profile from "./pages/Profile";
 import { useEffect } from "react";
-import axios from "axios";
+import Login from "./pages/Login";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   useEffect(() => {
-    axios
-      .get(`https://127.0.0.1:8000/api`)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error("Une erreur s'est produite :", error);
-      });
-  });
-
+    const token = localStorage.getItem("token");
+    if (!token) {
+      if (location.pathname !== "/login") {
+        window.location.href = "/login";
+        toast.error("Vous devez être connecté!");
+      }
+    }
+  }, []);
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,7 +35,6 @@ function App() {
       </div>
       <body>
         <Particle />
-        <Left />
         <AnimatedCursor
           innerSize={10}
           outerSize={8}
@@ -64,8 +62,10 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/media" element={<Media />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </Router>
+        <ToastContainer />
       </body>
     </>
   );

@@ -12,14 +12,12 @@ const ColorControl = () => {
 
   return (
     <div>
-      {/* Bouton Settings ici */}
       <div className="settings">
         <Icon className="iconColor" icon="material-symbols:settings-outline"></Icon>
         <a className="iconColor" onClick={showPopup}>
           Settings
         </a>
       </div>
-      {/* Popup ici */}
       <div id="popup" className="popup">
         <div className="popup-content">
           <h2>Settings</h2>
