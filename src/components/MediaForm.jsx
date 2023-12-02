@@ -6,7 +6,10 @@ import "react-toastify/dist/ReactToastify.css";
 
 const MediaForm = () => {
   const token = localStorage.getItem("token");
-  const userId = jwtDecode(token).username;
+  const [userId, setUserId] = useState("default");
+  if (token) {
+    setUserId(jwtDecode(token).username);
+  }
 
   const [media, setMedia] = useState("");
   const [service, setService] = useState("");
