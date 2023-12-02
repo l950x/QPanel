@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Login from "./pages/Login";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Mail from "./pages/Mail";
 
 function App() {
   const [disableBg, setDisableBg] = useState(0);
@@ -74,6 +75,7 @@ function App() {
           <Routes>
             <Route path="/QPanel/" element={<Dashboard />} />
             <Route path="/QPanel/media" element={<Media />} />
+            <Route path="/QPanel/mail" element={<Mail />} />
             <Route path="/QPanel/profile" element={<Profile />} />
             <Route path="/QPanel/login" element={<Login />} />
           </Routes>

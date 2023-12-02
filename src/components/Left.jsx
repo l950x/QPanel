@@ -67,7 +67,7 @@ const Left = () => {
             icon="material-symbols:mail-outline"
           ></Icon>
           <a className="iconColor" href="/QPanel/mail">
-            Mails Services
+            Mail Services
           </a>
         </div>
         <div className="smsLeft disabledBtn">
