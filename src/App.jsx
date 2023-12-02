@@ -5,12 +5,23 @@ import Media from "./pages/Media";
 import Particle from "./components/Particle";
 import AnimatedCursor from "react-animated-cursor";
 import Profile from "./pages/Profile";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Login from "./pages/Login";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const [disableBg, setDisableBg] = useState(0);
+  useEffect(() => {
+    let bg = localStorage.getItem("disable-bg");
+    if (bg) {
+      setDisableBg(1);
+      console.log(disableBg);
+    } else {
+      setDisableBg(0);
+      console.log(disableBg);
+    }
+  }, [disableBg]);
   // useEffect(() => {
   //   const token = localStorage.getItem("token");
   //   if (!token) {
@@ -28,12 +39,14 @@ function App() {
         href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
         rel="stylesheet"
       />
-      <div>
-        <div className="wave"></div>
-        <div className="wave"></div>
-        <div className="wave"></div>
-      </div>
       <body>
+        {disableBg ? (
+          <div>
+            <div className="wave"></div>
+            <div className="wave"></div>
+            <div className="wave"></div>
+          </div>
+        ) : null}
         <Particle />
         <AnimatedCursor
           innerSize={10}
