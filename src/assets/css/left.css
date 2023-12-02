@@ -59,15 +59,15 @@ a:hover {
   font-size: 18px;
   background: none;
   border: none;
-  color: rgb(154, 154, 154);
+  color: rgb(93, 93, 93);
 }
 
 .disabledBtn svg {
-  color: rgb(154, 154, 154);
+  color: rgb(93, 93, 93);
 }
 .disabledBtn:hover {
   color: rgb(74, 74, 74);
-  opacity: 0.5;
+  opacity: 0.6;
   transition: 0.2s;
 }
 .disabledBtn {
