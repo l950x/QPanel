@@ -1,26 +1,28 @@
 import "react-toastify/dist/ReactToastify.css";
 import Logo from "../assets/img/cabemoji.png";
+import { Icon } from "@iconify/react";
 const ProfileForm = () => {
   return (
-    <div>
+    <rof>
       <div className="img">
         <img src={Logo} alt="logo" />
       </div>
       <div className="description">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus,
-          dolorem quam necessitatibus veritatis, voluptates adipisci molestiae
-          voluptatem sit earum, officiis rerum fugit cupiditate consectetur
-          dolore tenetur ea id perspiciatis molestias!
-        </p>
+        <p>description</p>
       </div>
-      <div className="profilectn">
-          <p>Username: admin</p>
+      <div className="info">
+        <div className="profilectn">
+          <Icon icon="ph:user" />
+          <p>admin</p>
+        </div>
+        <hr className="profileHr" />
+        <div className="profilectn">
+          <Icon icon="ic:outline-email" />
           <p>admin@gmail.com</p>
-          <input type="password" />
-          <button>Edit profile picture</button>
+        </div>
       </div>
-    </div>
+      <button>Edit profile</button>
+    </rof>
   );
 };
 export default ProfileForm;

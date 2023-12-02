@@ -42,7 +42,7 @@ a:hover {
   margin: auto;
 }
 
-hr {
+.leftHr {
   border: var(--main-color) solid 1px;
   opacity: 0.5;
   width: 80%;

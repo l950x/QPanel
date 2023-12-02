@@ -46,7 +46,7 @@ const Left = () => {
           </a>
         </div>
       </div>
-      <hr />
+      <hr className="leftHr" />
       <div className="LA">
         <div className="smsLeft">
           <Icon
@@ -89,7 +89,7 @@ const Left = () => {
           </a>
         </div>
       </div>
-      <hr />
+      <hr className="leftHr" />
       <div className="LA">
         <div className="placeholder">
           <Icon
