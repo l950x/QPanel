@@ -15,7 +15,7 @@ function App() {
     const token = localStorage.getItem("token");
     if (!token) {
       if (location.pathname !== "/login") {
-        window.location.href = "/login";
+        // window.location.href = "/login";
         toast.error("Vous devez être connecté!");
       }
     }
