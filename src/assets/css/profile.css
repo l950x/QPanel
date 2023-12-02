@@ -12,7 +12,6 @@
     backdrop-filter: blur(6px);
     border-radius: 5px;
     width: 70%;
-  
     margin-left: auto;
     margin-right: auto;
   }
@@ -20,7 +19,7 @@
     padding: 50px 0;
     border-radius: 5px;
     margin: auto;
-    width: 30%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -29,26 +28,29 @@
     align-items: center;
   }
   
-  .Form input,
-  .Form select {
+  
+  .img {
+    text-align: center; /* Centrer l'image */
+  }
+  
+  .img img {
+    height: 100px;
+    border-radius: 50%; /* Ajouter une bordure arrondie à l'image si nécessaire */
+  }
+  
+  .profilectn {
+    background: #00000032;
+    display: flex;
+    flex-direction: column;
+    width: 80%; /* Ajuster la largeur selon vos besoins */
+    /* padding: 20px; Ajouter de la marge intérieure pour l'espace entre les éléments */
+    align-items: center;
+    margin: auto;
+  }
+  .profilectn p {
+    padding: 10px 30px;
+    border: 2px solid #00000032;
+  }
+  .password input {
     border-radius: 5px;
-    font-family: "Black Ops One", cursive;
-    background-color: var(--divColor);
-    border-color: transparent;
-    margin-bottom: 10px;
-    padding: 10px 50px;
-    color: var(--main-color);
-    cursor: pointer;
-  }
-  
-  .Form input::placeholder {
-    color: var(--main-color);
-  }
-  .form select {
-    border-color: transparent;
-  }
-  .Form select option {
-    background-color: rgb(182, 182, 182);
-    border-color: transparent;
-  }
-  
+    padding: 10px 30px;  }

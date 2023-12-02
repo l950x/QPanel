@@ -1,10 +1,17 @@
-
-const Profile = () => {
+import "../assets/css/profile.css";
+import ProfileForm from "../components/ProfileForm";
+import Left from "../components/Left";
+const Media = () => {
   return (
-    <div>
-      zer
-    </div>
-  )
-}
+    <>
+      <Left />
+      <div className="center">
+        <div className="Form">
+          <ProfileForm />
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default Profile
+export default Media;
