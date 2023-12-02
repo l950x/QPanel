@@ -11,15 +11,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      if (location.pathname !== "/QPanel/login") {
-        window.location.href = "/QPanel/login";
-        toast.error("Vous devez être connecté!");
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (!token) {
+  //     if (location.pathname !== "/QPanel/login") {
+  //       window.location.href = "/QPanel/login";
+  //       toast.error("Vous devez être connecté!");
+  //     }
+  //   }
+  // }, []);
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />

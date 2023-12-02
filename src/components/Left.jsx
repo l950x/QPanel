@@ -31,7 +31,7 @@ const Left = () => {
             style={{ verticalAlign: "middle" }}
             icon="iconamoon:profile"
           ></Icon>
-          <a className="iconColor" href="/profile">
+          <a className="iconColor" href="/QPanel/profile">
             Profile
           </a>
         </div>
@@ -54,7 +54,7 @@ const Left = () => {
             style={{ verticalAlign: "middle" }}
             icon="material-symbols:sms-outline"
           ></Icon>
-          <a className="iconColor" href="/sms">
+          <a className="iconColor" href="/QPanel/sms">
             SMS Services
           </a>
         </div>
@@ -64,7 +64,7 @@ const Left = () => {
             style={{ verticalAlign: "middle" }}
             icon="material-symbols:call-outline"
           ></Icon>
-          <a className="iconColor" href="/call">
+          <a className="iconColor" href="/QPanel/call">
             Voice Services
           </a>
         </div>
@@ -74,7 +74,7 @@ const Left = () => {
             style={{ verticalAlign: "middle" }}
             icon="material-symbols:mail-outline"
           ></Icon>
-          <a className="iconColor" href="/mail">
+          <a className="iconColor" href="/QPanel/mail">
             Mails Services
           </a>
         </div>
@@ -84,7 +84,7 @@ const Left = () => {
             style={{ verticalAlign: "middle" }}
             icon="material-symbols:media-link-outline"
           ></Icon>
-          <a className="iconColor" href="/media">
+          <a className="iconColor" href="/QPanel/media">
             Media Services
           </a>
         </div>
