@@ -1,16 +1,15 @@
+import '../assets/css/mail.css';
 import Left from "../components/Left";
-// import '../assets/css/mail.css'
 import MailForm from '../components/MailForm';
 
 const Mail = () => {
-
   return (
     <>
-    <Left/>
-    <div className="center">
-    <h1>Mail Services</h1>
-    <MailForm/>
-    </div>
+      <Left/>
+      <div className="mail-center">
+        <h1>Mail Services</h1>
+        <MailForm/>
+      </div>
     </>
   );
 };

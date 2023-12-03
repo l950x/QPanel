@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const MailForm = () => {
   const [mail, setMail] = useState("");
 
@@ -30,7 +31,7 @@ const MailForm = () => {
 
   return (
     <div>
-      <form className="Form" onSubmit={handleSubmit}>
+      <form className="mail-Form" onSubmit={handleSubmit}>
         <input
           type="text"
           name="number"
@@ -38,7 +39,7 @@ const MailForm = () => {
           onChange={(e) => setMail(e.target.value)}
           placeholder="Email Address"
         />
-        <button className="ui-btn">
+        <button className="mail-ui-btn">
           <span>Atomize</span>
         </button>
       </form>

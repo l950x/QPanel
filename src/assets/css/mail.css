@@ -1,209 +1,204 @@
-.ctn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .center {
-    padding: 20px;
-    font-family: "Black Ops One", cursive;
-    animation: Gazo3 0.5s ease 0s normal forwards;
-    background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 5px;
-    width: 70%;
-    /* height: 550px; */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .Form {
-    padding: 50px 0;
-    border-radius: 5px;
-    margin: auto;
-    height: 20vh;
-    background-color: rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  }
-  .Form input {
-    padding: 0;
-    text-align: center;
-  }
-  .Form input {
-    border-radius: 5px;
-    font-family: "Black Ops One", cursive;
-    background-color: var(--divColor);
-    border-color: transparent;
-    margin-bottom: 10px;
-    width: 80%;
-    /* padding: 0; */
-    /* padding: 10px 50px; */
-    height: 6vh;
-    margin: 5px;
-    color: var(--main-color);
-    cursor: pointer;
-  }
-  
-  .Form input::placeholder {
-    color: var(--main-color);
+.mail-ctn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mail-center {
+  padding: 20px;
+  font-family: "Black Ops One", cursive;
+  animation: Gazo3 0.5s ease 0s normal forwards;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 5px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mail-Form {
+  padding: 50px 0;
+  border-radius: 5px;
+  margin: auto;
+  height: 20vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.mail-Form input {
+  padding: 0;
+  text-align: center;
+  border-radius: 5px;
+  font-family: "Black Ops One", cursive;
+  background-color: var(--divColor);
+  border-color: transparent;
+  margin-bottom: 10px;
+  width: 80%;
+  height: 6vh;
+  margin: 5px;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.mail-Form input::placeholder {
+  color: var(--main-color);
+}
+
+.mail-ui-btn {
+  --btn-default-bg: var(--divColor);
+  --btn-padding: 14px 60px;
+  --btn-hover-bg: rgb(234, 0, 255, 0.1);
+  --btn-transition: 0.3s;
+  --btn-letter-spacing: 0.1rem;
+  --btn-animation-duration: 1.2s;
+  --btn-shadow-color: rgba(0, 0, 0, 0.137);
+  --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+  --hover-btn-color: var(--main-color);
+  --default-btn-color: #fff;
+  --font-size: 16px;
+  --font-weight: 600;
+  --font-family: Menlo, Roboto Mono, monospace;
+}
+
+.mail-ui-btn {
+  box-sizing: border-box;
+  padding: var(--btn-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  background: var(--btn-default-bg);
+  border: none;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  overflow: hidden;
+  box-shadow: var(--btn-shadow);
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.mail-ui-btn span {
+  letter-spacing: var(--btn-letter-spacing);
+  transition: var(--btn-transition);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.mail-ui-btn span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background: inherit;
+}
+
+.mail-ui-btn:hover,
+.mail-ui-btn:focus {
+  background: var(--btn-hover-bg);
+}
+
+.mail-ui-btn:hover span,
+.mail-ui-btn:focus span {
+  color: var(--hover-btn-color);
+}
+
+.mail-ui-btn:hover span::before,
+.mail-ui-btn:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+  0% {
+    content: "#";
   }
 
-  .ui-btn {
-    --btn-default-bg: var(--divColor);
-    --btn-padding: 14px 60px;
-    --btn-hover-bg: rgb(234, 0, 255, 0.1);
-    --btn-transition: 0.3s;
-    --btn-letter-spacing: 0.1rem;
-    --btn-animation-duration: 1.2s;
-    --btn-shadow-color: rgba(0, 0, 0, 0.137);
-    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
-    --hover-btn-color: var(--main-color);
-    --default-btn-color: #fff;
-    --font-size: 16px;
-    --font-weight: 600;
-    --font-family: Menlo, Roboto Mono, monospace;
+  5% {
+    content: ".";
   }
-  
-  
-  .ui-btn {
-    box-sizing: border-box;
-    padding: var(--btn-padding);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--default-btn-color);
-    font: var(--font-weight) var(--font-size) var(--font-family);
-    background: var(--btn-default-bg);
-    border: none;
-    cursor: pointer;
-    transition: var(--btn-transition);
-    overflow: hidden;
-    box-shadow: var(--btn-shadow);
-    border-radius: 5px;
-    margin-top: 15px;
+
+  10% {
+    content: "^{";
   }
-  
-  .ui-btn span {
-    letter-spacing: var(--btn-letter-spacing);
-    transition: var(--btn-transition);
-    box-sizing: border-box;
-    position: relative;
-    /* background: inherit; */
+
+  15% {
+    content: "-!";
   }
-  
-  .ui-btn span::before {
-    box-sizing: border-box;
-    position: absolute;
+
+  20% {
+    content: "#$_";
+  }
+
+  25% {
+    content: "№:0";
+  }
+
+  30% {
+    content: "#{+.";}35%{content: "@}-?";
+  }
+
+  40% {
+    content: "?{4@%";
+  }
+
+  45% {
+    content: "=.,^!";
+  }
+
+  50% {
+    content: "?2@%";
+  }
+
+  55% {
+    content: "\;1}]";
+  }
+
+  60% {
+    content: "?{%:%";
+    right: 0;
+  }
+
+  65% {
+    content: "|{f[4";
+    right: 0;
+  }
+
+  70% {
+    content: "{4%0%";
+    right: 0;
+  }
+
+  75% {
+    content: "'1_0<";
+    right: 0;
+  }
+
+  80% {
+    content: "{0%";
+    right: 0;
+  }
+
+  85% {
+    content: "]>'";
+    right: 0;
+  }
+
+  90% {
+    content: "4";
+    right: 0;
+  }
+
+  95% {
+    content: "2";
+    right: 0;
+  }
+
+  100% {
     content: "";
-    background: inherit;
+    right: 0;
   }
-  
-  .ui-btn:hover,
-  .ui-btn:focus {
-    background: var(--btn-hover-bg);
-  }
-  
-  .ui-btn:hover span,
-  .ui-btn:focus span {
-    color: var(--hover-btn-color);
-  }
-  
-  .ui-btn:hover span::before,
-  .ui-btn:focus span::before {
-    animation: chitchat linear both var(--btn-animation-duration);
-  }
-  
-  @keyframes chitchat {
-    0% {
-      content: "#";
-    }
-  
-    5% {
-      content: ".";
-    }
-  
-    10% {
-      content: "^{";
-    }
-  
-    15% {
-      content: "-!";
-    }
-  
-    20% {
-      content: "#$_";
-    }
-  
-    25% {
-      content: "№:0";
-    }
-  
-    30% {
-      content: "#{+.";}35%{content: "@}-?";
-    }
-  
-    40% {
-      content: "?{4@%";
-    }
-  
-    45% {
-      content: "=.,^!";
-    }
-  
-    50% {
-      content: "?2@%";
-    }
-  
-    55% {
-      content: "\;1}]";
-    }
-  
-    60% {
-      content: "?{%:%";
-      right: 0;
-    }
-  
-    65% {
-      content: "|{f[4";
-      right: 0;
-    }
-  
-    70% {
-      content: "{4%0%";
-      right: 0;
-    }
-  
-    75% {
-      content: "'1_0<";
-      right: 0;
-    }
-  
-    80% {
-      content: "{0%";
-      right: 0;
-    }
-  
-    85% {
-      content: "]>'";
-      right: 0;
-    }
-  
-    90% {
-      content: "4";
-      right: 0;
-    }
-  
-    95% {
-      content: "2";
-      right: 0;
-    }
-  
-    100% {
-      content: "";
-      right: 0;
-    }
-  }
-  
+}

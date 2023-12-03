@@ -1,15 +1,18 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const MediaForm = () => {
-  const token = localStorage.getItem("token");
   const [userId, setUserId] = useState("default");
-  if (token) {
-    setUserId(jwtDecode(token).username);
-  }
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (token) {
+      setUserId(jwtDecode(token).username);
+    }
+  }, [token]);
 
   const [media, setMedia] = useState("");
   const [service, setService] = useState("");
