@@ -8,7 +8,7 @@ function Particle() {
   }
   return (
     <>
-      {bg ? (
+      {!bg ? (
         <Particles
           id="tsparticles"
           init={loadParticles}

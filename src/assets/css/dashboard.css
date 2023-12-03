@@ -22,14 +22,14 @@
     margin-right: auto;
   }
   .logo {
-    background-image: url("../img/cabemoji2.png");
-    background-size: contain;
     height: 100px;
-    width: 100px;
+    /* background-image: url("../img/cabemoji2.png"); */
     /* background-color: #e70; */
+    background-size: auto;
   }
-  .center img {
-    height: 150px;
+  .logo img {
+    height: 100%;
+    width: 100%;
   }
   
   .center .p1 {

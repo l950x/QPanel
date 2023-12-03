@@ -39,7 +39,7 @@ function App() {
         rel="stylesheet"
       />
       <body>
-        {disableBg ? (
+        {!disableBg ? (
           <div>
             <div className="wave"></div>
             <div className="wave"></div>

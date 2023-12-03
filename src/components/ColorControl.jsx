@@ -10,11 +10,10 @@ const bg = localStorage.getItem("disable-bg");
 if (!bg && !BgText){
   setBgText("Active animated bg");
 }
-console.log("bg: " + bg);
-console.log("txt: " + BgText);
+
   const disableBackground = () => {
     if (bg) {
-      setBgText("Active animated bg");
+      setBgText("Disable animated bg");
       localStorage.removeItem("disable-bg");
       window.location.reload();
     } else {
@@ -52,7 +51,7 @@ console.log("txt: " + BgText);
           <button id="pinkButton">Pink</button>
           <button id="rainbowButton">RGB</button>
           <button id="DABackground" onClick={disableBackground}>
-          {BgText ? BgText : "Disable animated bg"}
+          {BgText ? BgText : "Activate animated bg"}
           </button>
           <button id="closeButton" onClick={closePopup}>
             Close
