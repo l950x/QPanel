@@ -7,7 +7,7 @@ import AnimatedCursor from "react-animated-cursor";
 import Profile from "./pages/Profile";
 import { useEffect, useState } from "react";
 import Login from "./pages/Login";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Mail from "./pages/Mail";
 
@@ -21,15 +21,15 @@ function App() {
       setDisableBg(0);
     }
   }, [disableBg]);
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (!token) {
-  //     if (location.pathname !== "/QPanel/login") {
-  //       window.location.href = "/QPanel/login";
-  //       toast.error("Vous devez être connecté!");
-  //     }
-  //   }
-  // }, []);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      if (location.pathname !== "/QPanel/login") {
+        window.location.href = "/QPanel/login";
+        toast.error("Vous devez être connecté!");
+      }
+    }
+  }, []);
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
