@@ -171,7 +171,7 @@ const Dashboard = () => {
               <span className="iconColor">Call send:</span>
               <span className="textColor">
                 {" "}
-                {dashboardData ? " Unverified" : " Loading..."}
+                {dashboardData ? " 0" : " Loading..."}
               </span>
             </p>
           </div>

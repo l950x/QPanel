@@ -34,8 +34,8 @@ const MediaForm = () => {
     }
 
     const quantityValue = parseInt(quantity, 10);
-    if (isNaN(quantityValue) || quantityValue <= 0) {
-      toast.error("Please provide a valid quantity value");
+    if (isNaN(quantityValue) || quantityValue < 100) {
+      toast.error("Please provide a valid quantity value (+100)");
       return;
     }
 
@@ -65,6 +65,12 @@ const MediaForm = () => {
         } else {
           toast.error("Request error please retry");
         }
+      })
+      .finally(() => {
+        setMedia("");
+        setService("");
+        setLink("");
+        setQuantity("");
       });
   };
 
@@ -103,7 +109,7 @@ const MediaForm = () => {
           placeholder="Link (https://...)"
         />
         <input
-          type="text"
+          type="number"
           name="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
