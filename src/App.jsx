@@ -13,6 +13,7 @@ import Mail from "./pages/Mail";
 
 function App() {
   const [disableBg, setDisableBg] = useState(0);
+
   useEffect(() => {
     let bg = localStorage.getItem("disable-bg");
     if (bg) {
@@ -21,15 +22,17 @@ function App() {
       setDisableBg(0);
     }
   }, [disableBg]);
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      if (location.pathname !== "/QPanel/login") {
-        window.location.href = "/QPanel/login";
-        toast.error("Vous devez être connecté!");
-      }
-    }
-  }, []);
+
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (!token) {
+  //     if (window.location.pathname !== "/login") {
+  //       window.location.href = "/login";
+  //       toast.error("Vous devez être connecté!");
+  //     }
+  //   }
+  // }, []);
+
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,7 +54,6 @@ function App() {
           innerSize={10}
           outerSize={8}
           color="238, 0, 255"
-          // color="50, 50, 50"
           outerAlpha={0.2}
           innerScale={0.7}
           outerScale={5}
@@ -71,7 +73,7 @@ function App() {
         />
         <Router>
           <Routes>
-            <Route path="/QPanel/" element={<Dashboard />} />
+          <Route path="/QPanel/" element={<Dashboard />} />
             <Route path="/QPanel/media" element={<Media />} />
             <Route path="/QPanel/mail" element={<Mail />} />
             <Route path="/QPanel/profile" element={<Profile />} />
