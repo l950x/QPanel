@@ -6,9 +6,13 @@ const ColorControl = () => {
     const popup = document.getElementById("popup");
     popup.style.display = "block";
   };
-
+const bg = localStorage.getItem("disable-bg");
+if (!bg && !BgText){
+  setBgText("Active animated bg");
+}
+console.log("bg: " + bg);
+console.log("txt: " + BgText);
   const disableBackground = () => {
-    let bg = localStorage.getItem("disable-bg");
     if (bg) {
       setBgText("Active animated bg");
       localStorage.removeItem("disable-bg");
@@ -41,16 +45,15 @@ const ColorControl = () => {
         <div className="popup-content">
           <h2>Settings</h2>
           <p>Theme:</p>
-          <a id="DABackground" onClick={disableBackground}>
-            {BgText ? BgText : "Disable animated bg"}
-          </a>
-          <br />
           <button id="purpleButton">Default</button>
           <button id="redButton">Red</button>
           <button id="greenButton">Green</button>
           <button id="blueButton">Blue</button>
           <button id="pinkButton">Pink</button>
           <button id="rainbowButton">RGB</button>
+          <button id="DABackground" onClick={disableBackground}>
+          {BgText ? BgText : "Disable animated bg"}
+          </button>
           <button id="closeButton" onClick={closePopup}>
             Close
           </button>
