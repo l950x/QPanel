@@ -37,8 +37,10 @@ const Dashboard = () => {
             smsSend: userData.smsSend,
             description: userData.description,
             registeredDate: userData.registeredDate,
+            userList: userData.userList,
           });
           setProfilePic(userData.profilePic);
+          console.log(userData.userList);
         })
         .catch((error) => {
           if (error.response) {
@@ -154,13 +156,6 @@ const Dashboard = () => {
           </div>
           <div className="p4">
             <p>
-              <span className="iconColor">SMS send:</span>
-              <span className="textColor">
-                {" "}
-                {dashboardData ? dashboardData.smsSend : "Loading..."}
-              </span>
-            </p>
-            <p>
               <span className="iconColor">Registered since:</span>
               <span className="textColor">
                 {" "}
@@ -168,10 +163,17 @@ const Dashboard = () => {
               </span>
             </p>
             <p>
-              <span className="iconColor">Call send:</span>
+              <span className="iconColor">Order send:</span>
               <span className="textColor">
                 {" "}
-                {dashboardData ? " 0" : " Loading..."}
+                {dashboardData ? dashboardData.smsSend : "Loading..."}
+              </span>
+            </p>
+            <p>
+              <span className="iconColor">Users Registered:</span>
+              <span className="textColor">
+                {" "}
+                {dashboardData ? dashboardData.userList : " Loading..."}
               </span>
             </p>
           </div>
