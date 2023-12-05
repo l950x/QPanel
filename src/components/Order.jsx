@@ -9,10 +9,11 @@ const Order = (props) => {
       <td>{props.service}</td>
       <td>{props.quantity}</td>
       <td>{props.status.remains}</td>
-      <td><a href={props.link}>{props.link}</a></td>
       <td>{props.status.status}</td>
       <td>{props.status.start_count ? props.status.start_count : "/" }</td>
-      <td><a href="/"><Icon icon="mdi:show-outline" /></a></td>
+      <td>{props.date}</td>
+      <td><a href={props.link}><Icon icon="tdesign:link" height={20} style={{ verticalAlign: "middle" }} /></a></td>
+      <td><a href="/"><Icon icon="mdi:show-outline" height={20} style={{ verticalAlign: "middle" }} /></a></td>
     </tr>
     );
   };

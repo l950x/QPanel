@@ -50,7 +50,7 @@ function App() {
           </div>
         ) : null}
         <Particle />
-        <AnimatedCursor
+        {/* <AnimatedCursor
           innerSize={10}
           outerSize={8}
           color="238, 0, 255"
@@ -70,7 +70,7 @@ function App() {
             "textarea",
             ".link",
           ]}
-        />
+        /> */}
         <Router>
           <Routes>
           <Route path="/QPanel/" element={<Dashboard />} />

@@ -39,8 +39,13 @@ const MailForm = () => {
           onChange={(e) => setMail(e.target.value)}
           placeholder="Email Address"
         />
+        <input
+          type="text"
+          name="number"
+          placeholder="Message"
+        />
         <button className="mail-ui-btn">
-          <span>Atomize</span>
+          <span>Send</span>
         </button>
       </form>
     </div>

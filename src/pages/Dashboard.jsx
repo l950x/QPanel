@@ -39,6 +39,7 @@ const Dashboard = () => {
             description: userData.description,
             registeredDate: userData.registeredDate,
             userList: userData.userList,
+            orders : userData.orders,
           });
           setProfilePic(userData.profilePic);
           console.log(userData.userList);
@@ -168,7 +169,7 @@ const Dashboard = () => {
               <span className="iconColor">Order send:</span>
               <span className="textColor">
                 {" "}
-                {dashboardData ? dashboardData.smsSend : "Loading..."}
+                {dashboardData ? dashboardData.orders : "Loading..."}
               </span>
             </p>
             <p>
