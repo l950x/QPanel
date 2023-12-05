@@ -1,0 +1,21 @@
+.sideHr {
+  border: var(--main-color) solid 1px;
+  /* opacity: 0.5; */
+  width: 80%;
+  margin:  10px auto;
+}
+
+.sidebarCtn {
+    /* backdrop-filter: blur(3px); */
+    /* border: #232323 solid 1px; */
+    /* width: 100px; */
+    background: #000;
+    height: 97vh;
+    margin: 10px;
+}
+
+.sidebarCtn .header {
+    /* background: #000; */
+    text-align: center;
+    margin: 10px;
+}

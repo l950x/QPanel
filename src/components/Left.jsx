@@ -37,15 +37,15 @@ const Left = () => {
             Profile
           </a>
         </div>
-        <div className="placeholder disabledBtn">
+        <div className="placeholder">
           <Icon
             className="iconColor"
             style={{ verticalAlign: "middle" }}
-            icon="ph:placeholder"
+            icon="lets-icons:order"
           ></Icon>
-          <button className="iconColor" href="">
-            Placeholder
-          </button>
+          <a className="iconColor" href="/QPanel/orders">
+            Order
+          </a>
         </div>
       </div>
       <hr className="leftHr" />

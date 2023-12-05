@@ -7,6 +7,7 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { ThreeCircles } from "react-loader-spinner";
 import { toast } from "react-toastify";
+// import Sidebar from "../components/sidebar";
 const Dashboard = () => {
   const sms = async (e) => {
     e.preventDefault();
@@ -68,6 +69,7 @@ const Dashboard = () => {
   return (
     <>
       <Left />
+      {/* <Sidebar/> */}
       {loading && (
         <div className="loading-container">
           <ThreeCircles color="gray" height={50} width={50} />

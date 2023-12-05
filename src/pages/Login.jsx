@@ -52,6 +52,7 @@ const Login = () => {
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <label>Email</label>
           </div>

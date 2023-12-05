@@ -14,10 +14,10 @@
   margin-right: auto;
 }
 .Form {
-  color: var(--main-color);
   /* padding: 50px 0; */
   border-radius: 5px;
   width: 96%;
+  height: 100%;
   margin: auto;
   /* width: 140vh; */
   background-color: rgba(0, 0, 0, 0.2);
@@ -27,6 +27,9 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+}
+.Form p {
+  color: var(--text-color);
 }
 
 .img {
@@ -41,7 +44,7 @@
   /* font-family: "Caprasimo", cursive; */
   /* font-family: "Roboto Condensed", sans-serif; */
   background: #00000032;
-  width: 90%;
+  width: 50%;
   margin: auto;
   font-size: 15px;
   /* padding: 2px 20px; */
@@ -61,21 +64,22 @@
   border: 1px solid #00000032;
   font-size: 15px;
   margin-bottom: 10px;
-  width: 90%;
+  width: 50%;
 }
 .profilectn {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   width: 90%;
   /* padding: 20px; Ajouter de la marge intérieure pour l'espace entre les éléments */
   align-items: center;
   margin: auto;
 }
 .profilectn p {
-  padding: 5px 30px;
+  /* padding: 5px 30px; */
 }
 .profilectn svg {
+  color: var(--main-color);
   width: 30px;
   height: 30px;
 }

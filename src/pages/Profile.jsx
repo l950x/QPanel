@@ -69,6 +69,16 @@ const Profile = () => {
                 <Icon icon="ic:outline-email" />
                 <p>{profileData ? profileData.mail : "Loading..."}</p>
               </div>
+              <hr className="profileHr" />
+              <div className="profilectn">
+                <Icon icon="ic:baseline-phone" />
+                <p>{profileData ? "07 14 55 78 14" : "Loading..."}</p>
+              </div>
+              <hr className="profileHr" />
+              <div className="profilectn">
+                <Icon icon="mdi:password-outline" />
+                <p>{profileData ? "**********" : "Loading..."}</p>
+              </div>
             </div>
             <button className="cssbuttons-io-button">
               Edit profile

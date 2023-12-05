@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* margin-top: 20px; */
+}
+td,
+thead,
+th {
+  text-align: center;
+  border: 1px solid var(--divColor);
+  padding: 3px 8px;
+  /* width: 90px; */
+  font-size: 14px;
+  color: var(--text-color);
+}

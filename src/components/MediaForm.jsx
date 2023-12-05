@@ -51,6 +51,7 @@ const MediaForm = () => {
       .post("https://127.0.0.1:8000/api/media", data)
       .then((response) => {
         toast.success(response.data.message);
+        console.log(response.data);
       })
       .catch((error) => {
         if (error.response) {

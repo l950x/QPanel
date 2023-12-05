@@ -10,7 +10,7 @@ import Login from "./pages/Login";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Mail from "./pages/Mail";
-
+import Orders from "./pages/Orders";
 function App() {
   const [disableBg, setDisableBg] = useState(0);
 
@@ -78,6 +78,7 @@ function App() {
             <Route path="/QPanel/mail" element={<Mail />} />
             <Route path="/QPanel/profile" element={<Profile />} />
             <Route path="/QPanel/login" element={<Login />} />
+            <Route path="/QPanel/orders" element={<Orders />} />
           </Routes>
         </Router>
         <ToastContainer />
