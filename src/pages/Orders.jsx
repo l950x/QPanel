@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import "../assets/css/orders.css";
 import Left from "../components/Left";
-import Order from "../components/order";
+import Order from "../components/Order";
 import { useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
