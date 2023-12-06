@@ -3,8 +3,6 @@ import "../assets/css/orders.css";
 import Left from "../components/Left";
 import Order from "../components/Order";
 import { useState } from "react";
-import { jwtDecode } from "jwt-decode";
-import axios from "axios";
 import { useEffect } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 import Axios from "./callAxios";
@@ -14,36 +12,16 @@ const Orders = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      const decodedToken = jwtDecode(token);
-      const userId = decodedToken.username;
       Axios
-        .post(`orders/${userId}`)
+        .post(`/getOrders`, {}, {
+          headers: {
+            Authorization: token,
+          },
+        })
+        
         .then((response) => {
           const data = response.data.orders;
-
           setOrderData(data.map((order) => order));
-
-          // setOrderData({
-          //   orderId: data.orderId,
-          //   mediaId: data.mediaId,
-          //   service: data.service,
-          //   quantity: data.quantity,
-          //   link: data.link,
-          // });
-        })
-        .catch((error) => {
-          if (error.response) {
-            const statusCode = error.response.status;
-            if (statusCode === 404) {
-              toast.error("404, API not found");
-            } else {
-              toast.error(`Error ${statusCode}: back-end not connected`);
-            }
-          } else if (error.request) {
-            toast.error("Internal server error");
-          } else {
-            toast.error("Request error please retry");
-          }
         })
         .finally(() => {
           setLoading(false);

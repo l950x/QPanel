@@ -18,7 +18,7 @@ const Profile = () => {
   const [description, setDescription] = useState("");
   const [username, setUsername] = useState("");
   const [mail, setMail] = useState("");
-  const [phone, setPhone] = useState("");  
+  const [phone, setPhone] = useState("");
   const confirmEdit = async (e) => {
     e.preventDefault();
     if (token) {
@@ -32,31 +32,37 @@ const Profile = () => {
         userId: userId,
       };
       // await setEditProfileData(newEditProfileData);
-  
-      Axios.post(`/profile/edit`, newEditProfileData)
-        .then((response) => {
-          const data = response.data;
-          localStorage.setItem("token", data.token);
-          toast.success("Profile edited");
-          setDescription("");
-          setUsername("");
-          setMail("");
-          setPhone("");
-          setEdit(false);
-          // setProfilePic(userData.profilePic);
-          // setLoading(false);
-        })
-      }
+
+      Axios.post(`/profile/edit`, newEditProfileData, {
+        headers: {
+          Authorization: token,
+        },
+      }).then((response) => {
+        const data = response.data;
+        localStorage.setItem("token", data.token);
+        toast.success("Profile edited");
+        setDescription("");
+        setUsername("");
+        setMail("");
+        setPhone("");
+        setEdit(false);
+        // setProfilePic(userData.profilePic);
+        // setLoading(false);
+      });
+    }
   };
-  
 
   useEffect(() => {
     if (token) {
-      Axios.post(`/dashboard`, {}, {
-        headers: {
-          Authorization: token
+      Axios.post(
+        `/dashboard`,
+        {},
+        {
+          headers: {
+            Authorization: token,
+          },
         }
-      }).then((response) => {
+      ).then((response) => {
         const userData = response.data;
         setProfileData({
           mail: userData.mail,

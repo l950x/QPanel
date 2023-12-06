@@ -3,7 +3,6 @@ import { Icon } from "@iconify/react";
 import Logo from "../assets/img/cabemoji.png";
 import Left from "../components/Left";
 import { useEffect, useState } from "react";
-import { jwtDecode } from "jwt-decode";
 import { ThreeCircles } from "react-loader-spinner";
 import { toast } from "react-toastify";
 import Axios from "./callAxios";
@@ -16,6 +15,7 @@ const Dashboard = () => {
       .post("https://127.0.0.1:8000/api/smsVerification")
       .then((response) => {
         const $data = response.data;
+        console.log($data);
       });
   };
   const [loading, setLoading] = useState(true);

@@ -9,19 +9,13 @@ import Axios from "../pages/callAxios";
 
 const MediaForm = () => {
   const [loading, setLoading] = useState(false);
-  const [userId, setUserId] = useState("default");
   const token = localStorage.getItem("token");
-  useEffect(() => {
-    if (token) {
-      setUserId(jwtDecode(token).username);
-    }
-  }, [token]);
-
   const [media, setMedia] = useState("");
   const [service, setService] = useState("");
   const [link, setLink] = useState("");
   const [quantity, setQuantity] = useState("");
   const [mediaSelected, setMediaSelected] = useState(false);
+  
   const setMediaBasedOnLink = (link) => {
     if (link.includes("youtube.com")) {
       setMedia("Youtube");
@@ -64,11 +58,14 @@ const MediaForm = () => {
         services: service,
         link: link,
         number: quantity,
-        userId: userId,
       };
 
       Axios
-        .post("/media", data)
+        .post("/media", data, {
+          headers: {
+            Authorization: token,
+          },
+        })
         .then((response) => {
           toast.success(response.data.message);
         })
