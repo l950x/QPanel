@@ -3,45 +3,76 @@ import Left from "../components/Left";
 import { ThreeCircles } from "react-loader-spinner";
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import axios from "axios";
 import { Icon } from "@iconify/react";
 import Logo from "../assets/img/cabemoji.png";
 import { toast } from "react-toastify";
+import Axios from "./callAxios";
 
 const Profile = () => {
+  const token = localStorage.getItem("token");
   const [loading, setLoading] = useState(true);
   const [profileData, setProfileData] = useState(null);
   const [profilePic, setProfilePic] = useState(null);
   const [edit, setEdit] = useState(false);
-  useEffect(() => {
-    const token = localStorage.getItem("token");
+
+  const [description, setDescription] = useState("");
+  const [username, setUsername] = useState("");
+  const [mail, setMail] = useState("");
+  const [phone, setPhone] = useState("");  
+  const confirmEdit = async (e) => {
+    e.preventDefault();
     if (token) {
       const decodedToken = jwtDecode(token);
       const userId = decodedToken.username;
-      axios
-        .post(`https://127.0.0.1:8000/api/dashboard/${userId}`)
+      const newEditProfileData = {
+        description: description,
+        username: username,
+        mail: mail,
+        phone: phone,
+        userId: userId,
+      };
+      // await setEditProfileData(newEditProfileData);
+  
+      Axios.post(`/profile/edit`, newEditProfileData)
         .then((response) => {
-          const userData = response.data;
-          setProfileData({
-            mail: userData.mail,
-            description: userData.description,
-            username: userData.username,
-            profilePic: userData.profilePic,
-          });
-          setProfilePic(userData.profilePic);
+          const data = response.data;
+          localStorage.setItem("token", data.token);
+          toast.success("Profile edited");
+          setDescription("");
+          setUsername("");
+          setMail("");
+          setPhone("");
+          setEdit(false);
+          // setProfilePic(userData.profilePic);
+          // setLoading(false);
         })
         .catch((error) => {
-          console.error("error :", error);
-        })
-        .finally(() => {
-          setLoading(false);
+          console.error("Error editing profile:", error);
         });
+      }
+  };
+  
+
+  useEffect(() => {
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      const userId = decodedToken.username;
+      Axios.post(`/dashboard/${userId}`).then((response) => {
+        const userData = response.data;
+        setProfileData({
+          mail: userData.mail,
+          description: userData.description,
+          username: userData.username,
+          profilePic: userData.profilePic,
+        });
+        setProfilePic(userData.profilePic);
+        setLoading(false);
+      });
     } else {
       setLoading(false);
       toast.error("Not connected (token not found)");
     }
-  }, []);
-  console.log(edit);
+  }, [token]);
   return (
     <>
       <Left />
@@ -112,6 +143,8 @@ const Profile = () => {
                 <div className="description">
                   <input
                     type="text"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                     placeholder={
                       profileData ? profileData.description : "Loading..."
                     }
@@ -122,6 +155,8 @@ const Profile = () => {
                     <Icon icon="ph:user" />
                     <input
                       type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
                       placeholder={
                         profileData ? profileData.username : "Loading..."
                       }
@@ -132,6 +167,8 @@ const Profile = () => {
                     <Icon icon="ic:outline-email" />
                     <input
                       type="text"
+                      value={mail}
+                      onChange={(e) => setMail(e.target.value)}
                       placeholder={
                         profileData ? profileData.mail : "Loading..."
                       }
@@ -142,6 +179,8 @@ const Profile = () => {
                     <Icon icon="ic:baseline-phone" />
                     <input
                       type="text"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                       placeholder={
                         profileData ? "07 14 55 78 14" : "Loading..."
                       }
@@ -158,7 +197,10 @@ const Profile = () => {
                 </div>
                 <div className="ctnBtn">
                   <a onClick={() => setEdit(false)}>Back</a>
-                  <button className="cssbuttons-io-button">
+                  <button
+                    className="cssbuttons-io-button"
+                    onClick={confirmEdit}
+                  >
                     Confirm
                     <div className="icon">
                       <svg

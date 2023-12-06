@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Media from "./pages/Media";
 import Particle from "./components/Particle";
-import AnimatedCursor from "react-animated-cursor";
+// import AnimatedCursor from "react-animated-cursor";
 import Profile from "./pages/Profile";
 import { useEffect, useState } from "react";
 import Login from "./pages/Login";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Mail from "./pages/Mail";
 import Orders from "./pages/Orders";
@@ -50,7 +50,7 @@ function App() {
           </div>
         ) : null}
         <Particle />
-        <AnimatedCursor
+        {/* <AnimatedCursor
           innerSize={10}
           outerSize={8}
           color="238, 0, 255"
@@ -70,7 +70,7 @@ function App() {
             "textarea",
             ".link",
           ]}
-        />
+        /> */}
         <Router>
           <Routes>
           <Route path="/QPanel/" element={<Dashboard />} />

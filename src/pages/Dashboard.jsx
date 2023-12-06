@@ -40,6 +40,7 @@ const Dashboard = () => {
             registeredDate: userData.registeredDate,
             userList: userData.userList,
             orders : userData.orders,
+            username: userData.username,
           });
           setProfilePic(userData.profilePic);
           console.log(userData.userList);
@@ -82,7 +83,7 @@ const Dashboard = () => {
             <div className="logo">
               <img src={profilePic ? profilePic : Logo} alt="" />
             </div>
-            <p className="iconColor">Welcome User</p>
+            <p className="iconColor">Welcome {dashboardData ? dashboardData.username : "User"}</p>
           </div>
           <div className="p2">
             <div className="id">

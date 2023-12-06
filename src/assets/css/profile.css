@@ -16,8 +16,8 @@
 .profileForm {
   /* padding: 50px 0; */
   border-radius: 5px;
-  width: 60vw;
-  height: 60vh;
+  width: 65vw;
+  height: 65vh;
   margin: auto;
   /* width: 140vh; */
   background-color: rgba(0, 0, 0, 0.2);
@@ -40,7 +40,7 @@
   background-color: var(--divColor);
   border-color: transparent;
   height: 5vh;
-  /* width: 3vw; */
+  width: 15vw;
   margin: 5px;
   color: var(--main-color);
   cursor: pointer;
@@ -49,7 +49,7 @@
   /* background: #000; */
   /* height: 100%; */
   width: 50%;
-  margin: auto;
+  /* margin: auto; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -77,8 +77,9 @@
   /* font-family: "Roboto Condensed", sans-serif; */
   background: #00000032;
   width: 50%;
-  /* height: 10vh; */
-  margin: auto;
+  min-height: 7vh;
+  max-height: 7vh;
+  /* margin: auto; */
   font-size: 15px;
   /* padding: 2px 20px; */
   margin-bottom: 10px;
@@ -98,8 +99,11 @@
   font-size: 15px;
   margin-bottom: 10px;
   width: 50%;
+  min-height: 29vh;
+  max-height: 29vh;
 }
 .profilectn {
+  /* padding: 1px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -107,6 +111,8 @@
   /* padding: 20px; Ajouter de la marge intérieure pour l'espace entre les éléments */
   align-items: center;
   margin: auto;
+  min-height: 7vh;
+  max-height: 7vh;
 }
 .profilectn p {
   /* padding: 5px 30px; */
