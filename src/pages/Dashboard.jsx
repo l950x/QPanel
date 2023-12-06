@@ -3,10 +3,11 @@ import { Icon } from "@iconify/react";
 import Logo from "../assets/img/cabemoji.png";
 import Left from "../components/Left";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { ThreeCircles } from "react-loader-spinner";
 import { toast } from "react-toastify";
+import Axios from "./callAxios";
+import axios from "axios";
 // import Sidebar from "../components/sidebar";
 const Dashboard = () => {
   const sms = async (e) => {
@@ -15,7 +16,6 @@ const Dashboard = () => {
       .post("https://127.0.0.1:8000/api/smsVerification")
       .then((response) => {
         const $data = response.data;
-        console.log($data);
       });
   };
   const [loading, setLoading] = useState(true);
@@ -25,10 +25,12 @@ const Dashboard = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      const decodedToken = jwtDecode(token);
-      const userId = decodedToken.username;
-      axios
-        .post(`https://127.0.0.1:8000/api/dashboard/${userId}`)
+      Axios
+        .post(`/dashboard`, {}, {
+          headers: {
+            Authorization: token
+          }
+        })
         .then((response) => {
           const userData = response.data;
           setDashboardData({
@@ -43,21 +45,6 @@ const Dashboard = () => {
             username: userData.username,
           });
           setProfilePic(userData.profilePic);
-          console.log(userData.userList);
-        })
-        .catch((error) => {
-          if (error.response) {
-            const statusCode = error.response.status;
-            if (statusCode === 404) {
-              toast.error("404, API not found");
-            } else {
-              toast.error(`Error ${statusCode}: back-end not connected`);
-            }
-          } else if (error.request) {
-            toast.error("Internal server error");
-          } else {
-            toast.error("Request error please retry");
-          }
         })
         .finally(() => {
           setLoading(false);

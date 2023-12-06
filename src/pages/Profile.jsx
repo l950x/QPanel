@@ -46,18 +46,17 @@ const Profile = () => {
           // setProfilePic(userData.profilePic);
           // setLoading(false);
         })
-        .catch((error) => {
-          console.error("Error editing profile:", error);
-        });
       }
   };
   
 
   useEffect(() => {
     if (token) {
-      const decodedToken = jwtDecode(token);
-      const userId = decodedToken.username;
-      Axios.post(`/dashboard/${userId}`).then((response) => {
+      Axios.post(`/dashboard`, {}, {
+        headers: {
+          Authorization: token
+        }
+      }).then((response) => {
         const userData = response.data;
         setProfileData({
           mail: userData.mail,

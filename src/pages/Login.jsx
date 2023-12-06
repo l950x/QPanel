@@ -1,9 +1,9 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../assets/css/login.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Axios from "./callAxios";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -15,28 +15,14 @@ const Login = () => {
       email: email,
       password: password,
     };
-    axios
-      .post("https://127.0.0.1:8000/api/login", formData)
-      .then((response) => {
+    Axios.post("/login", formData).then((response) => {
+      if (response.data.status === 1) {
         localStorage.setItem("token", response.data.token);
         navigate("/QPanel/");
-      })
-      .catch((error) => {
-        if (error.response) {
-          const statusCode = error.response.status;
-          if (statusCode === 401) {
-            toast.error("Incorrect identifiant");
-          } else if (statusCode === 404) {
-            toast.error("404, API not found");
-          } else {
-            toast.error(`Error ${statusCode}, contact admin`);
-          }
-        } else if (error.request) {
-          toast.error("Server error: ");
-        } else {
-          toast.error("Request error");
-        }
-      });
+      } else if (response.data.status === 0) {
+        toast.error("Incorrect identifiant");
+      }
+    });
   };
 
   return (

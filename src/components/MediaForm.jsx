@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ThreeCircles } from "react-loader-spinner";
+import { Icon } from "@iconify/react";
+import Axios from "../pages/callAxios";
 
 const MediaForm = () => {
   const [loading, setLoading] = useState(false);
@@ -65,25 +67,10 @@ const MediaForm = () => {
         userId: userId,
       };
 
-      axios
-        .post("https://127.0.0.1:8000/api/media", data)
+      Axios
+        .post("/media", data)
         .then((response) => {
           toast.success(response.data.message);
-          console.log(response.data);
-        })
-        .catch((error) => {
-          if (error.response) {
-            const statusCode = error.response.status;
-            if (statusCode === 404) {
-              toast.error("404, API not found");
-            } else {
-              toast.error(`Error ${statusCode}, please contact admin`);
-            }
-          } else if (error.request) {
-            toast.error("Internal server error");
-          } else {
-            toast.error("Request error please retry");
-          }
         })
         .finally(() => {
           setMedia("");
@@ -134,6 +121,24 @@ const MediaForm = () => {
           <option value="Likes">Likes</option>
           <option value="Followers">Followers</option>
         </select>
+        {/* <hr className="mediaHr" />
+        <div className="service">
+          <a>
+            <Icon
+              icon="mdi:user-add"
+              height={40}
+              style={{ verticalAlign: "middle" }}
+            />
+          </a>
+          <a href="">
+            <Icon
+              icon="iconamoon:like"
+              height={40}
+              style={{ verticalAlign: "middle" }}
+            />
+          </a>
+        </div>
+        <hr className="mediaHr" /> */}
         <input
           type="number"
           name="number"

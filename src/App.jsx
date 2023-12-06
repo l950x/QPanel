@@ -7,28 +7,55 @@ import Particle from "./components/Particle";
 import Profile from "./pages/Profile";
 import { useEffect, useState } from "react";
 import Login from "./pages/Login";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Mail from "./pages/Mail";
 import Orders from "./pages/Orders";
+import Axios from "./pages/callAxios";
+import { jwtDecode } from "jwt-decode";
+
 function App() {
   const [disableBg, setDisableBg] = useState(0);
 
   useEffect(() => {
     let bg = localStorage.getItem("disable-bg");
-    if (bg) {
-      setDisableBg(1);
-    } else {
-      setDisableBg(0);
-    }
+    setDisableBg(bg ? 1 : 0);
   }, [disableBg]);
 
+  
+  // Disabled for github deployement -->
   // useEffect(() => {
   //   const token = localStorage.getItem("token");
-  //   if (!token) {
-  //     if (window.location.pathname !== "/login") {
-  //       window.location.href = "/login";
-  //       toast.error("Vous devez être connecté!");
+  //   if (token && token.split('.').length === 3) {
+  //     const decodedToken = jwtDecode(token);
+  //     const expirationDate = decodedToken.exp;
+  //     const currentTimestamp = Math.floor(Date.now() / 1000);
+
+  //     if (expirationDate > currentTimestamp) {
+  //       const userId = decodedToken.username;
+  //       Axios.post(`/isLogged/${userId}`, {}, {
+  //         headers: {
+  //           Authorization: token
+  //         }
+  //       }).then((response) => {
+  //         if (response.data === false) {
+  //           localStorage.removeItem("token");
+  //           if (window.location.pathname !== "/QPanel/login") {
+  //             window.location.href = "/QPanel/login";
+  //             toast.error("Please login.");
+  //           }
+  //         }
+  //       });
+  //     } else {
+  //       localStorage.removeItem("token");
+  //       if (window.location.pathname !== "/QPanel/login") {
+  //         toast.error("Your session has expired. Please login again.");
+  //       }
+  //     }
+  //   } else {
+  //     if (window.location.pathname !== "/QPanel/login") {
+  //       window.location.href = "/QPanel/login";
+  //       toast.error("You are not logged in. Please login.");
   //     }
   //   }
   // }, []);

@@ -7,6 +7,7 @@ import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import { useEffect } from "react";
 import { ThreeCircles } from "react-loader-spinner";
+import Axios from "./callAxios";
 const Orders = () => {
   const [orderData, setOrderData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,8 +16,8 @@ const Orders = () => {
     if (token) {
       const decodedToken = jwtDecode(token);
       const userId = decodedToken.username;
-      axios
-        .post(`https://127.0.0.1:8000/api/orders/${userId}`)
+      Axios
+        .post(`orders/${userId}`)
         .then((response) => {
           const data = response.data.orders;
 
