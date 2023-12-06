@@ -14,9 +14,9 @@ This project constitutes the front-end aspect of the QPanel application, develop
 
 ## Deployment
 
-The back-end section of the site is still under development; only the front-end portion is currently public. If you want to try it locally, simply clone the repository to your computer using the following git command:
+The back-end section of the site is still in development; only the front-end portion is currently public. If you want to try it locally, simply clone the repository to your computer using the following git command:
 
 ```bash
-  https://github.com/l950x/QPanel.git
+  git clone https://github.com/l950x/QPanel.git
 ```
 Then, run a local server from the cloned directory
