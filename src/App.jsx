@@ -13,7 +13,7 @@ import Mail from "./pages/Mail";
 import Orders from "./pages/Orders";
 import Axios from "./pages/callAxios";
 import { jwtDecode } from "jwt-decode";
-import Register from "./pages/register";
+import Register from "./pages/Register";
 function App() {
   const [disableBg, setDisableBg] = useState(0);
 
