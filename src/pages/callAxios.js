@@ -16,7 +16,7 @@ Axios.interceptors.response.use(
           toast.error("404, API not found");
           break;
         default:
-          toast.error(`Error ${statusCode}: back-end not connected`);
+          toast.error(`Error ${statusCode}: ${error.response.data.detail}`);
       }
     } else if (error.request) {
       toast.error("Internal server error");

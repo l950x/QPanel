@@ -7,12 +7,10 @@ import Particle from "./components/Particle";
 import Profile from "./pages/Profile";
 import { useEffect, useState } from "react";
 import Login from "./pages/Login";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Mail from "./pages/Mail";
 import Orders from "./pages/Orders";
-import Axios from "./pages/callAxios";
-import { jwtDecode } from "jwt-decode";
 import Register from "./pages/Register";
 function App() {
   const [disableBg, setDisableBg] = useState(0);

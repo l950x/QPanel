@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Axios from './callAxios';
 import Left from '../components/Left';
+import '../assets/css/register.css';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ const Register = () => {
                 
             })
             .catch((error) => {
-                // handle error
+                
             });
     };
 

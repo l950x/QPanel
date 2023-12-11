@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import "../assets/css/login.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -57,6 +57,7 @@ const Login = () => {
             Login
           </button>
         </form>
+        <a href="/QPanel/register">Register</a>
       </div>
     </>
   );

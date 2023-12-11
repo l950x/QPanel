@@ -1,10 +1,7 @@
-import axios from "axios";
-import { jwtDecode } from "jwt-decode";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ThreeCircles } from "react-loader-spinner";
-import { Icon } from "@iconify/react";
 import Axios from "../pages/callAxios";
 
 const MediaForm = () => {
@@ -74,6 +71,7 @@ const MediaForm = () => {
           setService("");
           setLink("");
           setQuantity("");
+          setMediaSelected(false);
           setLoading(false);
         });
     }
@@ -113,7 +111,7 @@ const MediaForm = () => {
         >
           <option value="">Which services ?</option>
           {media === "Youtube" ? (
-            <option value="Dislike">Dislike</option>
+            <option value="Views">Views</option>
           ) : null}
           <option value="Likes">Likes</option>
           <option value="Followers">Followers</option>

@@ -11,6 +11,7 @@ import Axios from "./callAxios";
 const Profile = () => {
   const token = localStorage.getItem("token");
   const [loading, setLoading] = useState(true);
+  const [editLoading, setEditLoading] = useState(false);
   const [profileData, setProfileData] = useState(null);
   const [profilePic, setProfilePic] = useState(null);
   const [edit, setEdit] = useState(false);
@@ -19,8 +20,23 @@ const Profile = () => {
   const [username, setUsername] = useState("");
   const [mail, setMail] = useState("");
   const [phone, setPhone] = useState("");
+  
   const confirmEdit = async (e) => {
     e.preventDefault();
+    const regexUsername = /^[a-zA-Z0-9]+$/;
+    const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    
+    if (username && !regexUsername.test(username)) {
+      toast.error("Invalid username (only letters and numbers allowed).");
+      return;
+    }
+  
+    if (mail && !regexEmail.test(mail)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    setEditLoading(true);
     if (token) {
       const decodedToken = jwtDecode(token);
       const userId = decodedToken.username;
@@ -45,13 +61,13 @@ const Profile = () => {
         setUsername("");
         setMail("");
         setPhone("");
+        setEditLoading(false);
         setEdit(false);
         // setProfilePic(userData.profilePic);
         // setLoading(false);
       });
     }
   };
-
   useEffect(() => {
     if (token) {
       Axios.post(
@@ -208,18 +224,23 @@ const Profile = () => {
                   >
                     Confirm
                     <div className="icon">
-                      <svg
-                        height="24"
-                        width="24"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path
-                          d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
+                      {editLoading && (
+                        <ThreeCircles color="gray" height={20} width={20} />
+                      )}
+                      {!editLoading && (
+                        <svg
+                          height="24"
+                          width="24"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none"></path>
+                          <path
+                            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      )}
                     </div>
                   </button>
                 </div>
