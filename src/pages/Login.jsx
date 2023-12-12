@@ -4,17 +4,33 @@ import "../assets/css/login.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Axios from "./callAxios";
+import Button from "../components/button/Button";
 
 const Login = () => {
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
+  const [loginLoading, setLoginLoading] = useState(false);
   const [password, setPassword] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
+    if (!regexEmail.test(email)) {
+      toast.error("Please provide a valid email address.");
+      return;
+    }
+
+    if (password.length < 6) {
+      toast.error("Please provide a valid password.");
+      return;
+    }
+
+    setLoginLoading(true);
     const formData = {
       email: email,
       password: password,
     };
+
     Axios.post("/login", formData).then((response) => {
       if (response.data.status === 1) {
         localStorage.setItem("token", response.data.token);
@@ -22,6 +38,7 @@ const Login = () => {
       } else if (response.data.status === 0) {
         toast.error("Incorrect identifiant");
       }
+      setLoginLoading(false);
     });
   };
 
@@ -38,7 +55,6 @@ const Login = () => {
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required
             />
             <label>Email</label>
           </div>
@@ -49,42 +65,21 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               name="password"
-              required
             />
             <label>Password</label>
           </div>
-          <button className="button1" type="submit">
-            Login
-          </button>
+          <div className="loginBtnCtn">
+            {loginLoading ? (
+              <Button loading="1" />
+            ) : (
+              <Button text="Login" type="submit" />
+            )}
+            <Button text="Register" redirectTo="/QPanel/register" />
+          </div>
         </form>
-        <a href="/QPanel/register">Register</a>
       </div>
     </>
   );
 };
 
 export default Login;
-
-// try {
-//   const response = await axios.post(
-//     "https://127.0.0.1:8000/api/login",
-//     formData
-//   );
-//   localStorage.setItem("token", response.data.token);
-//   navigate("/");
-// } catch (error) {
-//   if (error.response) {
-//     const statusCode = error.response.status;
-//     if (statusCode === 401) {
-//       toast.error("Incorrect");
-//     } else if (statusCode === 404) {
-//       toast.error("404, API not found");
-//     } else {
-//       toast.error(`Error ${statusCode}, contact admin`);
-//     }
-//   } else if (error.request) {
-//     toast.error("Server error");
-//   } else {
-//     toast.error("Request error");
-//   }
-// }

@@ -123,3 +123,6 @@ a:hover {
 .popup-content button:hover {
   transform: scale(1.05);
 }
+.settings, .logout {
+  cursor: pointer;
+}

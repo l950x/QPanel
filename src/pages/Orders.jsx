@@ -12,13 +12,16 @@ const Orders = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      Axios
-        .post(`/getOrders`, {}, {
+      Axios.post(
+        `/getOrders`,
+        {},
+        {
           headers: {
             Authorization: token,
           },
-        })
-        
+        }
+      )
+
         .then((response) => {
           const data = response.data.orders;
           setOrderData(data.map((order) => order));
@@ -28,7 +31,11 @@ const Orders = () => {
         });
     } else {
       setLoading(false);
-      toast.error("Not connected (token not found)");
+      if (!toast.isActive("tokenError")) {
+        toast.error("Not connected (token not found)", {
+          toastId: "tokenError",
+        });
+      }
     }
   }, []);
   return (

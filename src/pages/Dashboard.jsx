@@ -25,12 +25,15 @@ const Dashboard = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      Axios
-        .post(`/dashboard`, {}, {
+      Axios.post(
+        `/dashboard`,
+        {},
+        {
           headers: {
-            Authorization: token
-          }
-        })
+            Authorization: token,
+          },
+        }
+      )
         .then((response) => {
           const userData = response.data;
           setDashboardData({
@@ -41,7 +44,7 @@ const Dashboard = () => {
             description: userData.description,
             registeredDate: userData.registeredDate,
             userList: userData.userList,
-            orders : userData.orders,
+            orders: userData.orders,
             username: userData.username,
           });
           setProfilePic(userData.profilePic);
@@ -51,7 +54,11 @@ const Dashboard = () => {
         });
     } else {
       setLoading(false);
-      toast.error("Not connected (token not found)");
+      if (!toast.isActive("tokenError")) {
+        toast.error("Not connected (token not found)", {
+          toastId: "tokenError",
+        });
+      }
     }
   }, []);
 
@@ -70,7 +77,9 @@ const Dashboard = () => {
             <div className="logo">
               <img src={profilePic ? profilePic : Logo} alt="" />
             </div>
-            <p className="iconColor">Welcome {dashboardData ? dashboardData.username : "User"}</p>
+            <p className="iconColor">
+              Welcome {dashboardData ? dashboardData.username : "User"}
+            </p>
           </div>
           <div className="p2">
             <div className="id">

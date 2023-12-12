@@ -20,17 +20,17 @@ const Profile = () => {
   const [username, setUsername] = useState("");
   const [mail, setMail] = useState("");
   const [phone, setPhone] = useState("");
-  
+
   const confirmEdit = async (e) => {
     e.preventDefault();
     const regexUsername = /^[a-zA-Z0-9]+$/;
     const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-    
+
     if (username && !regexUsername.test(username)) {
       toast.error("Invalid username (only letters and numbers allowed).");
       return;
     }
-  
+
     if (mail && !regexEmail.test(mail)) {
       toast.error("Please enter a valid email address.");
       return;
@@ -91,7 +91,11 @@ const Profile = () => {
       });
     } else {
       setLoading(false);
-      toast.error("Not connected (token not found)");
+      if (!toast.isActive("tokenError")) {
+        toast.error("Not connected (token not found)", {
+          toastId: "tokenError",
+        });
+      }
     }
   }, [token]);
   return (

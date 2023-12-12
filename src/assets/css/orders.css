@@ -11,13 +11,10 @@ th {
   padding: 3px 8px;
   font-size: 12px;
   color: var(--text-color);
-  
-  
 }
 
-
 .orderForm {
-  /* padding: 50px 0; */
+  padding: 50px 0;
   border-radius: 5px;
   margin: auto;
   max-height: 50vh;
@@ -27,8 +24,8 @@ th {
   text-align: center;
   justify-content: center;
   align-items: center;
-  /* overflow-y: scroll; */
-
+  min-height: 50vh;
+  overflow-y: scroll;
 }
 .noOrder h2 {
   color: var(--main-color);

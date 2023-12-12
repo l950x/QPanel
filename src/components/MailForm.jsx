@@ -5,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const MailForm = () => {
   const [mail, setMail] = useState("");
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios

@@ -93,7 +93,7 @@ const Left = () => {
       </div>
       <hr className="leftHr" />
       <div className="LA">
-        <div className="placeholder">
+        <div className="logout">
           <Icon
             className="iconColor"
             style={{ verticalAlign: "middle" }}

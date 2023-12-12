@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 const Axios = axios.create({
-    baseURL: "https://127.0.0.1:8000/api",
+  baseURL: "https://127.0.0.1:8000/api",
 });
 
 Axios.interceptors.response.use(
@@ -11,18 +11,33 @@ Axios.interceptors.response.use(
   (error) => {
     if (error.response) {
       const statusCode = error.response.status;
+      let toastId;
       switch (statusCode) {
         case 404:
-          toast.error("404, API not found");
+          if (!toast.isActive("404")) {
+            toast.error("404, API not found", { toastId: "404" });
+          }
           break;
         default:
-          toast.error(`Error ${statusCode}: ${error.response.data.detail}`);
+          toastId = `error${statusCode}`;
+          if (!toast.isActive(toastId)) {
+            toast.error(`Error ${statusCode}: ${error.response.data.detail}`, {
+              toastId,
+            });
+          }
       }
     } else if (error.request) {
-      toast.error("Internal server error");
+      if (!toast.isActive("internalServerError")) {
+        toast.error("Internal server error", {
+          toastId: "internalServerError",
+        });
+      }
     } else {
-      toast.error("Request error, please retry");
+      if (!toast.isActive("requestError")) {
+        toast.error("Request error, please retry", { toastId: "requestError" });
+      }
     }
+    localStorage.removeItem("token");
     throw error;
   }
 );
