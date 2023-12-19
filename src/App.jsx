@@ -14,7 +14,7 @@ import Orders from "./pages/Orders";
 import Register from "./pages/Register";
 import { jwtDecode } from "jwt-decode";
 import Axios from "./pages/callAxios";
-import Admin from "./pages/admin";
+import Admin from "./pages/Admin";
 import Discord from "./pages/Discord";
 function App() {
   const [disableBg, setDisableBg] = useState(0);
