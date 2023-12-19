@@ -46,6 +46,7 @@ const Dashboard = () => {
             userList: userData.userList,
             orders: userData.orders,
             username: userData.username,
+            discord: userData.discord,
           });
           setProfilePic(userData.profilePic);
         })
@@ -122,7 +123,8 @@ const Dashboard = () => {
               <p>
                 <span className="iconColor">Discord:</span>
                 <span className="textColor">
-                  {dashboardData ? " Unverified" : " Loading..."}
+                  {" "}
+                  {dashboardData ? dashboardData.discord : " Loading..."}
                 </span>
               </p>
             </div>

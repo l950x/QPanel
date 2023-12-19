@@ -137,6 +137,11 @@ const Profile = () => {
                     <Icon icon="mdi:password-outline" />
                     <p>{profileData ? "**********" : "Loading..."}</p>
                   </div>
+                  <div className="discordAuth">
+                    <a href="https://discord.com/api/oauth2/authorize?client_id=1184847147686961242&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2FQPanel%2Fdiscord&scope=identify+guilds">
+                      Link discord account
+                    </a>
+                  </div>
                 </div>
                 <button
                   className="cssbuttons-io-button"

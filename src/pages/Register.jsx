@@ -2,7 +2,7 @@ import { useState } from "react";
 import Axios from "./callAxios";
 import "../assets/css/register.css";
 import Button from "../components/button/Button";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Register = () => {

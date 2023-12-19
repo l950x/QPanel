@@ -14,6 +14,8 @@ import Orders from "./pages/Orders";
 import Register from "./pages/Register";
 import { jwtDecode } from "jwt-decode";
 import Axios from "./pages/callAxios";
+import Admin from "./pages/admin";
+import Discord from "./pages/Discord";
 function App() {
   const [disableBg, setDisableBg] = useState(0);
 
@@ -24,42 +26,42 @@ function App() {
 
 
   // Disabled for github deployement -->
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token && token.split('.').length === 3) {
-  //     const decodedToken = jwtDecode(token);
-  //     const expirationDate = decodedToken.exp;
-  //     const currentTimestamp = Math.floor(Date.now() / 1000);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token && token.split('.').length === 3) {
+      const decodedToken = jwtDecode(token);
+      const expirationDate = decodedToken.exp;
+      const currentTimestamp = Math.floor(Date.now() / 1000);
 
-  //     if (expirationDate > currentTimestamp) {
-  //       const userId = decodedToken.id;
-  //       Axios.post(`/isLogged/${userId}`, {}, {
-  //         headers: {
-  //           Authorization: token
-  //         }
-  //       }).then((response) => {
-  //         if (response.data.status === 0) {
-  //           localStorage.removeItem("token");
-  //           if (window.location.pathname !== "/QPanel/login") {
-  //             window.location.href = "/QPanel/login";
-  //             toast.error("Please login.");
-  //           }
-  //         }
-  //       });
-  //     } else {
-  //       localStorage.removeItem("token");
-  //       if (window.location.pathname !== "/QPanel/login") {
-  //         toast.error("Your session has expired. Please login again.");
-  //         window.location.href = "/QPanel/login";
-  //       }
-  //     }
-  //   } else {
-  //     if (window.location.pathname !== "/QPanel/login") {
-  //       window.location.href = "/QPanel/login";
-  //       toast.error("You are not logged in. Please login.");
-  //     }
-  //   }
-  // }, []);
+      if (expirationDate > currentTimestamp) {
+        const userId = decodedToken.id;
+        Axios.post(`/isLogged/${userId}`, {}, {
+          headers: {
+            Authorization: token
+          }
+        }).then((response) => {
+          if (response.data.status === 0) {
+            localStorage.removeItem("token");
+            if (window.location.pathname !== "/QPanel/login") {
+              window.location.href = "/QPanel/login";
+              toast.error("Please login.");
+            }
+          }
+        });
+      } else {
+        localStorage.removeItem("token");
+        if (window.location.pathname !== "/QPanel/login") {
+          toast.error("Your session has expired. Please login again.");
+          window.location.href = "/QPanel/login";
+        }
+      }
+    } else {
+      if (window.location.pathname !== "/QPanel/login") {
+        window.location.href = "/QPanel/login";
+        toast.error("You are not logged in. Please login.");
+      }
+    }
+  }, []);
   // <-- 
 
   return (
@@ -109,6 +111,9 @@ function App() {
             <Route path="/QPanel/login" element={<Login />} />
             <Route path="/QPanel/orders" element={<Orders />} />
             <Route path="/QPanel/register" element={<Register />} />
+            <Route path="/QPanel/admin" element={<Admin />} />
+            <Route path="/QPanel/discord" element={<Discord />} />
+            
             
           </Routes>
         </Router>
