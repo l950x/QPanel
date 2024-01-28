@@ -24,7 +24,6 @@ function App() {
     setDisableBg(bg ? 1 : 0);
   }, [disableBg]);
 
-
   // Disabled for github deployement -->
   // useEffect(() => {
   //   const token = localStorage.getItem("token");
@@ -62,7 +61,7 @@ function App() {
   //     }
   //   }
   // }, []);
-  // <-- 
+  // <--
 
   return (
     <>
@@ -104,7 +103,7 @@ function App() {
         /> */}
         <Router>
           <Routes>
-          <Route path="/QPanel/" element={<Dashboard />} />
+            <Route path="/QPanel/" element={<Dashboard />} />
             <Route path="/QPanel/media" element={<Media />} />
             <Route path="/QPanel/mail" element={<Mail />} />
             <Route path="/QPanel/profile" element={<Profile />} />
@@ -113,8 +112,6 @@ function App() {
             <Route path="/QPanel/register" element={<Register />} />
             <Route path="/QPanel/admin" element={<Admin />} />
             <Route path="/QPanel/discord" element={<Discord />} />
-            
-            
           </Routes>
         </Router>
         <ToastContainer />
