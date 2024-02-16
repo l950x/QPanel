@@ -143,6 +143,12 @@
 }
 
 @media screen and (max-width: 765px) {
+  
+  .center {
+    overflow-y: scroll;
+
+  }
+
   p {
     /* font-size: 1.5rem; */
     font-size: 0.7rem;

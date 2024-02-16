@@ -65,7 +65,7 @@ const Dashboard = () => {
 
   return (
     <>
-      {/* <Left /> */}
+      <Left />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {/* <Sidebar/> */}
       {loading && (
