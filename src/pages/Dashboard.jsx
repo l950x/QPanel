@@ -65,7 +65,8 @@ const Dashboard = () => {
 
   return (
     <>
-      <Left />
+      {/* <Left /> */}
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       {/* <Sidebar/> */}
       {loading && (
         <div className="loading-container">
@@ -135,13 +136,13 @@ const Dashboard = () => {
                 width="25"
                 height="25"
               ></Icon>
-              <a onClick={sms}>
+              <p onClick={sms}>
                 <span className="iconColor">SMS:</span>
                 <span className="textColor">
                   {" "}
                   {dashboardData ? " Unverified" : " Loading..."}
                 </span>
-              </a>
+              </p>
             </div>
           </div>
 

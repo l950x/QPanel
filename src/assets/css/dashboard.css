@@ -1,107 +1,223 @@
 :root {
-    --divColor: #1f1f1f67;
+  --divColor: #1f1f1f67;
+}
+
+.ctn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  padding: 20px;
+  font-family: "Black Ops One", cursive;
+  /* animation: Gazo3 0.5s ease 0s normal forwards; */
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 5px;
+  width: 70%;
+  /* height: 80vh; */
+  margin-left: auto;
+  margin-right: auto;
+}
+.logo {
+  height: 100px;
+  /* background-image: url("../img/cabemoji2.png"); */
+  /* background-color: #e70; */
+  background-size: auto;
+}
+.logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.center .p1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center .p2 {
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: var(--divColor);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.center .p3 {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: var(--divColor);
+  text-align: center;
+}
+
+.center .p4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.center .p4 p {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: var(--divColor);
+  text-align: center;
+}
+
+.center .p5 {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: var(--divColor);
+  text-align: center;
+}
+
+.id,
+.mail,
+.discord,
+.smsc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icn {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+}
+.version {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shield {
+  padding: 5px;
+}
+
+@media screen and (max-width: 1264px) {
+  p {
+    font-size: 0.8em;
   }
-  
-  .ctn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+
+  .shield {
+    width: 40px !important;
+    height: 40px !important;
   }
-  
-  .center {
-    padding: 20px;
-    font-family: "Black Ops One", cursive;
-    /* animation: Gazo3 0.5s ease 0s normal forwards; */
-    background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 5px;
-    width: 70%;
-    /* height: 80vh; */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .logo {
-    height: 100px;
-    /* background-image: url("../img/cabemoji2.png"); */
-    /* background-color: #e70; */
-    background-size: auto;
-  }
-  .logo img {
-    height: 100%;
-    width: 100%;
-  }
-  
-  .center .p1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .center .p2 {
-    padding: 10px;
-    margin: 10px;
-    margin-bottom: 20px;
+
+  /* .center .p3 {
+    padding: 2px;
     border-radius: 5px;
     background-color: var(--divColor);
+    text-align: center;
+  } */
+}
+@media screen and (max-width: 1091px) {
+  p {
+    font-size: 0.7em;
+  }
+
+  .logo {
+    height: 75px;
+  }
+}
+@media screen and (max-width: 950px) {
+  p {
+    font-size: 0.6em;
+  }
+}
+@media screen and (max-width: 850px) {
+  p {
+    font-size: 0.5em;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  p {
+    /* font-size: 1.5rem; */
+    font-size: 0.7rem;
+  }
+  .center .p2 {
+    /* padding: 0; */
+    /* margin: 10px; */
+    /* margin-bottom: 20px; */
+    /* border-radius: 5px; */
+    background-color: var(--divColor);
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(35, 214, 22); */
+    /* margin: auto; */
+  }
+
+  .id,
+  .mail,
+  .discord,
+  .smsc {
+    padding: 0 40px;
+    margin: 0;
+    height: 5vh;
+    /* background-color: var(--divColor); */
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* margin: auto; */
   }
-  
+
   .center .p3 {
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
     background-color: var(--divColor);
     text-align: center;
+    height: 12vh;
   }
-  
+
+  .shield {
+    padding: 0;
+  }
+
   .center .p4 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  
-  .center .p4 p {
-    width: 100%;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
     background-color: var(--divColor);
-    text-align: center;
-  }
-  
-  .center .p5 {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    background-color: var(--divColor);
-    text-align: center;
-  }
-  
-  .id,
-  .mail,
-  .discord,
-  .smsc {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .icn {
-    display: flex;
-    flex-direction: row;
-    margin-right: 10px;
-  }
-  .version {
+
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 10px;
+    justify-content: space-around;
+    border-radius: 5px;
   }
-  .shield {
-    padding: 5px;
+
+  .center .p4 p {
+    /* font-size: 1.3rem; */
+    margin: auto;
+    padding: 5px 40px;
+    width: 56vw;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
+    /* border-radius: 0; */
+    /* padding: 10px 10px; */
+    /* width: 70%; */
+    /* margin: 10px; */
+    /* border-radius: 5px; */
+    /* background-color: var(--divColor); */
+    /* text-align: center; */
   }
-  
+}
+
+/* @media screen and (max-width: 688px) {
+  p {
+    font-size: clamp(0.7rem, -0.2585rem + 4.0895vw, 1.5rem);
+  }
+} */
