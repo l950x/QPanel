@@ -3,7 +3,8 @@ import { Icon } from "@iconify/react";
 import Logo from "../assets/img/cabemoji.png";
 import ColorControl from "./ColorControl";
 const Left = () => {
-  function logout() {
+  function logout(e) {
+    e.preventDefault();
     localStorage.removeItem("token");
     window.location.href = "/QPanel/login";
   }

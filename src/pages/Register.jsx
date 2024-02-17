@@ -111,10 +111,10 @@ const Register = () => {
             {registerLoading ? (
               <Button loading="1" />
             ) : (
-              <Button text="Register" type="submit" />
-            )}
+              <Button text="Back" redirectTo="/QPanel/login" />
+              )}
           </div>
-            <Button text="Login" redirectTo="/QPanel/login" />
+              <Button text="Register" type="submit" />
           </div>
         </form>
       </div>

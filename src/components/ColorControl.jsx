@@ -2,7 +2,8 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 const ColorControl = () => {
   const [BgText, setBgText] = useState(null);
-  const showPopup = () => {
+  const showPopup = (e) => {
+    e.preventDefault();
     const popup = document.getElementById("popup");
     popup.style.display = "block";
   };
@@ -33,7 +34,7 @@ const ColorControl = () => {
   return (
     <div>
       <div className="settings">
-        <a href="">
+        <a href="" onClick={showPopup}>
           <Icon
             className="iconColor side-icon"
             icon="material-symbols:settings-outline"
