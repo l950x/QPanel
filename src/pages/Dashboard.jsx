@@ -7,7 +7,7 @@ import { ThreeCircles } from "react-loader-spinner";
 import { toast } from "react-toastify";
 import Axios from "./callAxios";
 import axios from "axios";
-import Sidebar from "../components/sidebar";
+// import Sidebar from "../components/sidebar";
 const Dashboard = () => {
   const sms = async (e) => {
     e.preventDefault();
