@@ -6,11 +6,10 @@
   margin: 10px;
   border-radius: 3px;
   /* box-shadow: 7px 0px 9px 0px #0000007c; */
+  transition: 0.2s;
 }
 
-.sideCtn {
-  /* background-color: aqua; */
-}
+
 .openSidebarIcon {
   color: var(--divColor);
 }
@@ -240,9 +239,7 @@ a:hover {
     display: none;
   }
 
-  .leftHr {
-    /* display: none; */
-  }
+
 }
 @media screen and (max-width: 494px) {
   .left {

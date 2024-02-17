@@ -10,10 +10,11 @@
 }
 
 .center {
+  transition: 0.2s;
   padding: 20px;
   font-family: "Black Ops One", cursive;
   /* animation: Gazo3 0.5s ease 0s normal forwards; */
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(201, 23, 23, 0.888);
   backdrop-filter: blur(15px);
   border-radius: 5px;
   width: 70%;
@@ -145,6 +146,8 @@
 @media screen and (max-width: 765px) {
   .center {
     /* overflow-y: scroll; */
+    /* background-color: aqua; */
+    /* width: 100%; */
   }
 
   p {

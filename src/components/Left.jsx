@@ -119,7 +119,7 @@ const Left = () => {
               </a>
             </div>
             <div className="smsLeft disabledBtn">
-              <a href="/QPanel/sms">
+              <a href="">
                 <Icon
                   className="iconColor side-icon"
                   style={{ verticalAlign: "middle" }}
@@ -131,7 +131,7 @@ const Left = () => {
               </button>
             </div>
             <div className="calls disabledBtn">
-              <a href="/QPanel/call">
+              <a href="">
                 <Icon
                   className="iconColor side-icon"
                   style={{ verticalAlign: "middle" }}
