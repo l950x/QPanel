@@ -6,12 +6,12 @@ const ColorControl = () => {
     const popup = document.getElementById("popup");
     popup.style.display = "block";
   };
-const bg = localStorage.getItem("disable-bg");
-if (!bg && !BgText){
-  setBgText("Disable animated bg");
-} else if (bg && !BgText) {
-  setBgText("Active animated bg");
-}
+  const bg = localStorage.getItem("disable-bg");
+  if (!bg && !BgText) {
+    setBgText("Disable animated bg");
+  } else if (bg && !BgText) {
+    setBgText("Active animated bg");
+  }
 
   const disableBackground = () => {
     if (bg) {
@@ -33,12 +33,14 @@ if (!bg && !BgText){
   return (
     <div>
       <div className="settings">
-        <Icon
-          className="iconColor"
-          icon="material-symbols:settings-outline"
-          style={{ verticalAlign: "middle" }}
-        ></Icon>
-        <a className="iconColor" onClick={showPopup}>
+        <a href="">
+          <Icon
+            className="iconColor side-icon"
+            icon="material-symbols:settings-outline"
+            style={{ verticalAlign: "middle" }}
+          ></Icon>
+        </a>
+        <a className="iconColor side-text" onClick={showPopup}>
           Settings
         </a>
       </div>
@@ -53,7 +55,7 @@ if (!bg && !BgText){
           <button id="pinkButton">Pink</button>
           <button id="rainbowButton">RGB</button>
           <button id="DABackground" onClick={disableBackground}>
-          {BgText}
+            {BgText}
           </button>
           <button id="closeButton" onClick={closePopup}>
             Close
