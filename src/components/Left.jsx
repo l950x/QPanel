@@ -48,14 +48,14 @@ const Left = () => {
         </div>
           <div className="sideCtn">
         <div className="leftIn">
-          <a href="app_home">
+          <a href="/QPanel/">
             <img src={Logo} alt="logo" />
           </a>
           <p className="iconColor">QPanel v1.0.0</p>
         </div>
           <div className="LA">
             <div className="dashboard">
-              <a href="">
+              <a href="/QPanel/">
                 <Icon
                   className="iconColor side-icon"
                   style={{ verticalAlign: "middle" }}
@@ -67,7 +67,7 @@ const Left = () => {
               </a>
             </div>
             <div className="profile">
-              <a href="">
+              <a href="/QPanel/profile">
                 <Icon
                   className="iconColor side-icon"
                   style={{ verticalAlign: "middle" }}
@@ -79,7 +79,7 @@ const Left = () => {
               </a>
             </div>
             <div className="placeholder">
-              <a href="">
+              <a href="/QPanel/orders">
                 <Icon
                   className="iconColor side-icon"
                   style={{ verticalAlign: "middle" }}
@@ -94,7 +94,7 @@ const Left = () => {
           <hr className="leftHr" />
           <div className="LA">
             <div className="MediaLeft">
-              <a href="">
+              <a href="/QPanel/media">
                 <Icon
                   className="iconColor side-icon"
                   style={{ verticalAlign: "middle" }}
@@ -106,7 +106,7 @@ const Left = () => {
               </a>
             </div>
             <div className="mailLeft">
-              <a href="">
+              <a href="/QPanel/mail">
                 <Icon
                   className="iconColor side-icon"
                   style={{ verticalAlign: "middle" }}
@@ -118,7 +118,7 @@ const Left = () => {
               </a>
             </div>
             <div className="smsLeft disabledBtn">
-              <a href="">
+              <a href="/QPanel/sms">
                 <Icon
                   className="iconColor side-icon"
                   style={{ verticalAlign: "middle" }}
@@ -130,7 +130,7 @@ const Left = () => {
               </button>
             </div>
             <div className="calls disabledBtn">
-              <a href="">
+              <a href="/QPanel/call">
                 <Icon
                   className="iconColor side-icon"
                   style={{ verticalAlign: "middle" }}
@@ -145,7 +145,7 @@ const Left = () => {
           <hr className="leftHr" />
           <div className="LA">
             <div className="logout">
-              <a href="">
+              <a href="" onClick={logout}>
                 <Icon
                   className="iconColor side-icon"
                   style={{ verticalAlign: "middle" }}
