@@ -43,7 +43,7 @@ const Left = () => {
               icon="material-symbols:close"
               width="25"
               height="25 "
-              className="iconColor"
+              className="divColor"
             />
           </a>
         </div>

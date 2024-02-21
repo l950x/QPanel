@@ -9,6 +9,9 @@
   transition: 0.2s;
 }
 
+.divColor {
+  color: var(--divColor);
+}
 
 .openSidebarIcon {
   color: var(--divColor);
@@ -20,6 +23,7 @@
   z-index: 999;
   top: 0 !important;
   /* left: 50 !important; */
+  
 }
 .leftIn img {
   margin-top: 10px;
@@ -224,6 +228,7 @@ a:hover {
   .left {
     height: 97vh;
     width: 80px;
+    margin: 0;
   }
   .side-text {
     text-align: center;
@@ -241,10 +246,24 @@ a:hover {
 
 
 }
+
+@media screen and (max-width: 590px) {
+  .left {
+    /* height: 100vh; */
+  }
+}
+
 @media screen and (max-width: 494px) {
   .left {
-    height: 97vh;
+    /* height: 97vh; */
     width: 70px;
+  }
+
+  .leftIn img {
+    /* margin-top: 10px; */
+    height: 35px;
+    width: 35px;
+    /* margin-bottom: 10px; */
   }
 
   .side-icon {
@@ -255,14 +274,14 @@ a:hover {
 
 @media screen and (max-width: 429px) {
   .left {
-    height: 97vh;
-    width: 70px;
+    /* height: 97vh; */
+    width: 55px;
     margin: 0;
-    margin-right: 10px;
+    /* margin-right: 10px; */
   }
 
   .side-icon {
-    font-size: 2em;
+    font-size: 1.7em;
     
     padding: 5px;
   }

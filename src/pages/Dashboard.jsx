@@ -73,7 +73,7 @@ const Dashboard = () => {
         </div>
       )}
       {!loading && (
-        <div className="center">
+        <div className="dashboardCenter">
           <div className="p1">
             <div className="logo">
               <img src={profilePic ? profilePic : Logo} alt="" />
